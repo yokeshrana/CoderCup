@@ -1,5 +1,5 @@
 <?php
-
+$_SESSION['username']='ssinghmy';
 
 ?>
 
@@ -12,6 +12,9 @@
     <style>
         body {
             font-family: "Lato", sans-serif;
+            min-width: 1400px;
+            background-color: #ff6599;
+            //color:#fff;
         }
 
         .sidenav {
@@ -19,7 +22,7 @@
             float: left;
             height: 100%;
             width: 230px;
-            /*position: fixed;*/
+            position: fixed;
             /*z-index: 1;*/
 
             background-color: #1d2731;
@@ -48,14 +51,16 @@
         .main-container{
             display: inline-block;
             padding-left: 20px;
+            margin-top: 70px;
+            margin-left:250px;
         }
     </style>
 </head>
 
 <body>
 <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
+    <div class="navbar-inner" style="background-color: #1d2731">
+        <div class="container" >
             <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -63,8 +68,8 @@
             </a>
             <a class="brand" href="#"><-- CoderCup ---></a>
 
-            <button class="btn-danger" style="float: right;height: 100%; margin:0; padding: 9px;">Logout</button>
-            <span class="lead" style="float: right; margin-right:10px;">Username</span>
+            <button class="btn-danger" style="float: right; margin:0; padding: 9px;">Logout</button>
+            <span class="lead" style="float: right; margin-right:10px;"><?php echo $_SESSION['username'];?></span>
         </div>
     </div>
 </div>
