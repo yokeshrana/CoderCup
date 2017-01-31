@@ -4,16 +4,17 @@ $_SESSION['username']='ssinghmy';
 ?>
 
 
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 
 <head>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/materialize.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+<!--    <link href="css/bootstrap-responsive.css" rel="stylesheet">-->
     <style>
         body {
             font-family: "Lato", sans-serif;
             min-width: 1400px;
-            background-color: #ff6599;
+            //background-color: #ff6599;
             //color:#fff;
         }
 
@@ -51,27 +52,39 @@ $_SESSION['username']='ssinghmy';
         .main-container{
             display: inline-block;
             padding-left: 20px;
-            margin-top: 70px;
-            margin-left:250px;
+            margin-top: 0px;
+            margin-left:350px;
+            width:600px;
         }
     </style>
 </head>
 
 <body>
-<div class="navbar navbar-fixed-top">
-    <div class="navbar-inner" style="background-color: #1d2731">
-        <div class="container" >
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </a>
-            <a class="brand" href="#"><-- CoderCup ---></a>
+<!--<div class="navbar navbar-fixed-top">-->
+<!--    <div class="navbar-inner" style="background-color: #1d2731">-->
+<!--        <div class="container" >-->
+<!--            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">-->
+<!--                <span class="icon-bar"></span>-->
+<!--                <span class="icon-bar"></span>-->
+<!--                <span class="icon-bar"></span>-->
+<!--            </a>-->
+<!--            <a class="brand" href="#"><-- CoderCup </a>-->
 
-            <button class="btn-danger" style="float: right; margin:0; padding: 9px;">Logout</button>
-            <span class="lead" style="float: right; margin-right:10px;"><?php echo $_SESSION['username'];?></span>
+<!--            <button class="btn-danger" style="float: right; margin:0; padding: 9px;">Logout</button>-->
+<!--            <span class="lead" style="float: right; margin-right:10px;">--><?php //echo $_SESSION['username'];?><!--</span>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper blue-grey darken-3">
+            <a href="#!" class="brand-logo text-black">&nbsp&nbspCoder Cup !</span></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="#">Logged in as : <?php echo $_SESSION['username'];?></a></li>
+                <li><a href="#">Log Out</a></li>
+            </ul>
         </div>
-    </div>
+    </nav>
 </div>
 <div>
     <div class="sidenav">

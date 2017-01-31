@@ -10,9 +10,9 @@ include ('header.php');
 $con = dbConnect();
 
 if(isset($_GET['success']))
-    echo("<div class=\"alert alert-success\">\nCongratulations! You have solved the problem successfully.\n</div>");
+    echo("<div class=\"alert alert-success\">\nCongratulations! Your code has been submitted\n</div>");
 ?>
-Below is a list of available problems for you to solve.<br/><br/>
+Problems<br/><br/>
 <ul class="nav nav-list">
     <li class="nav-header">AVAILABLE PROBLEMS</li>
     <?php
@@ -23,17 +23,6 @@ Below is a list of available problems for you to solve.<br/><br/>
         echo("<li>None</li>\n"); // no problems are there
     else {
         while($row = mysqli_fetch_assoc($result)) {
-//            $sql = "SELECT status FROM submissions WHERE (username='".$_SESSION['username']."' AND problem_id='".$row['sl']."')";
-//            $res = mysqli_query($con,$sql);
-            $tag = "";
-//            // decide the attempted or solve tag
-//            if(mysqli_num_rows($res) !== 0) {
-//                $r = mysqli_fetch_assoc($res);
-//                if($r['status'] == 1)
-//                    $tag = " <span class=\"label label-warning\">Attempted</span>";
-//                else if($r['status'] == 2)
-//                    $tag = " <span class=\"label label-success\">Solved</span>";
-//            }
             if(isset($_GET['id']) and $_GET['id']==$row['sl']) {
                 $selected = $row;
                 echo("<li class=\"active\"><a href=\"#\">".$row['title'].$tag."</a></li>\n");
@@ -43,3 +32,5 @@ Below is a list of available problems for you to solve.<br/><br/>
     }
     ?>
 </ul>
+
+<?php include ('footer.php'); ?>
