@@ -1,0 +1,21 @@
+.alert
+{
+    padding:10px;
+    margin:10px;
+    background-color: #a82d33;
+    color:white;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.alert-success{
+    background-color: seagreen;
+    color:white;
+}
+
+.time-limit{
+    padding:3px;
+    color:white;
+    font-size:14px;
+    background-color: darkred;
+}
