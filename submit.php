@@ -26,76 +26,78 @@ if (isset($_GET['CompilationError'])) {
 $con = dbConnect();
 ?>
 
-<div class="card">
-    <div class="card-content z-depth-5" style="padding-left:30px">
-    <span class="card-title blue-text text-darken-4">Submit Your Code</span>
+<h4 style="text-align: center">
+    <small>Submit Your Code</small>
+</h4>
 
-    <?php
-    // display the problem statement
-    if (isset($_GET['id']) and is_numeric($_GET['id']))
-    {
-        $query = "SELECT * FROM problems WHERE id='" . $_GET['id'] . "'";
-        $result = mysqli_query($con, $query);
-        $row = mysqli_fetch_assoc($result);
-        include('markdown.php');
-        $out = $row['text'];
-        echo("<hr/>\n<h4>" . $row['title'] . "</h4>");
-        ?>
-        <span class="time-limit right">Time Limit: <?php echo($row['time'] / 1000); ?> seconds</span>
-        <br>
-        <?php
-        echo($out);
-        ?>
-        <br>
-        <br>
-        <hr/>
-        <?php
-        // get the peviously submitted solution if exists
-        if (is_numeric($_GET['id'])) {
-            $query = "SELECT * FROM submissions WHERE (problem_id='" . $_GET['id'] . "' AND username='" . $_SESSION['username'] . "')";
-            $result = mysqli_query($con, $query);
-            $num = mysqli_num_rows($result);
-            $fields = mysqli_fetch_assoc($result);
-        }
-        ?>
-
-        <form class="form" method="post" action="postsubmit.php">
-            <?php if ($num == 0)
-                echo('<input type="hidden" name="submissionType" value="new"/>');
-            else
-                echo('<input type="hidden" name="submissionType" value="change"/>');
-            ?>
-            <input type="hidden" name="id" value="<?php if (is_numeric($_GET['id'])) echo($_GET['id']); ?>"/>
-
-            <div class="row">
-                <div class="input-field col s6">
-                    <b>Filename</b> <input style="height: 27px;" required type="text" id="filename" name="filename"
-                                           value="<?php if (!($num == 0)) echo($fields['filename']); ?>"/>
-
-                </div>
-                <div class="input-field col s6">
-                    <b>Language</b>
-                    <select class="browser-default" name="language">
-                        <option value="c">C Language</option>
-                        <option value="cpp">C++</option>
-                        <option value="java">Java</option>
-                        <option value="python">Python</option>
-                    </select>
-
-                </div>
-            </div>
-
-            <b>Paste your program below:</b><br/>
-            <textarea style="font-family: mono; font-size: 14px;height:350px; padding: 10px" name="solution_code"
-                      id="text"><?php if (!($num == 0)) echo($fields['solution']); ?></textarea><br/>
-            </br>
-            <input type="submit" value="Submit" class="btn-flat teal darken-3 white-text">
-
-
-        </form>
-        </div>
-</div>
 <?php
+// display the problem statement
+if (isset($_GET['id']) and is_numeric($_GET['id'])) {
+    $query = "SELECT * FROM problems WHERE id='" . $_GET['id'] . "'";
+    $result = mysqli_query($con, $query);
+    $row = mysqli_fetch_assoc($result);
+    include('markdown.php');
+    $out = $row['text'];
+    echo("<hr/>\n<h4>" . $row['title'] . "</h4>");
+    ?>
+    <span class="time-limit right">Time Limit: <?php echo($row['time'] / 1000); ?> seconds</span>
+    <br>
+    <?php
+    echo($out);
+    ?>
+    <br>
+    <br>
+    <hr/>
+    <?php
+    // get the peviously submitted solution if exists
+    if (is_numeric($_GET['id'])) {
+        $query = "SELECT * FROM submissions WHERE (problem_id='" . $_GET['id'] . "' AND username='" . $_SESSION['username'] . "')";
+        $result = mysqli_query($con, $query);
+        $num = mysqli_num_rows($result);
+        $fields = mysqli_fetch_assoc($result);
+    }
+    ?>
+
+    <form class="form" method="post" action="postsubmit.php">
+        <?php if ($num == 0)
+            echo('<input type="hidden" name="submissionType" value="new"/>');
+        else
+            echo('<input type="hidden" name="submissionType" value="change"/>');
+        ?>
+        <input type="hidden" name="id" value="<?php if (is_numeric($_GET['id'])) echo($_GET['id']); ?>"/>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <b>Filename</b> <input style="height: 27px;" required type="text" id="filename" name="filename"
+                       value="<?php if (!($num == 0)) echo($fields['filename']); ?>"/>
+
+            </div>
+            <div class="input-field col s6">
+                <b>Language</b>
+                <select class="browser-default" name="language">
+                    <option value="c">C Language</option>
+                    <option value="cpp">C++</option>
+                    <option value="java">Java</option>
+                    <option value="python">Python</option>
+                </select>
+
+            </div>
+        </div>
+       
+        <br/><b>Paste your program below:</b><br/><br/>
+        <textarea style="font-family: mono; height:400px;" class="span9" name="solution_code"
+                  id="text"><?php if (!($num == 0)) echo($fields['solution']); ?></textarea><br/>
+
+        <input type="submit" value="Submit" class="btn btn-danger">
+
+
+    </form>
+    <?php
 }
 ?>
-<?php include('footer.php'); ?>
+<script>
+    $(document).ready(function() {
+        $('select').material_select();
+    });
+</script>
+<?php include ('footer.php'); ?>
