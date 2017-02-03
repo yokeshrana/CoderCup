@@ -13,7 +13,7 @@ if (isset($_GET['success']))
     echo("<div class=\"alert alert-success\">\nCongratulations! Your code has been submitted\n</div>");
 ?>
 
-<div class="cards-container">
+<div class="cards-container" style="padding-right:100px">
     <div class="collapsible-header purple darken-4 z-depth-5 white-text"><b>AVAILABLE PROBLEMS</b></div>
     <br>
 
