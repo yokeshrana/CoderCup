@@ -60,7 +60,7 @@ $title='';
             display: inline-block;
             padding-left: 20px;
             margin-top: 10px;
-            margin-left:380px;
+            margin-left:320px;
             width:700px;
         }
     </style>

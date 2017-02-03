@@ -27,8 +27,8 @@ $con = dbConnect();
 ?>
 
 <div class="card">
-    <div class="card-content">
-    <span class="card-title">Submit Your Code</span>
+    <div class="card-content z-depth-5" style="padding-left:30px">
+    <span class="card-title blue-text text-darken-4">Submit Your Code</span>
 
     <?php
     // display the problem statement
@@ -85,11 +85,11 @@ $con = dbConnect();
                 </div>
             </div>
 
-            <br/><b>Paste your program below:</b><br/><br/>
-            <textarea style="font-family: mono; height:400px;" class="span9" name="solution_code"
+            <b>Paste your program below:</b><br/>
+            <textarea style="font-family: mono; font-size: 14px;height:350px; padding: 10px" name="solution_code"
                       id="text"><?php if (!($num == 0)) echo($fields['solution']); ?></textarea><br/>
-
-            <input type="submit" value="Submit" class="btn btn-danger">
+            </br>
+            <input type="submit" value="Submit" class="btn-flat teal darken-3 white-text">
 
 
         </form>
