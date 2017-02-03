@@ -1,12 +1,14 @@
 <?php
 $_SESSION['username']='ssinghmy';
 
+$title='';
 ?>
 
 
 <html xmlns="http://www.w3.org/1999/html">
 
 <head>
+    <title>CoderCup</title>
     <link href="css/materialize.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
 <!--    <link href="css/bootstrap-responsive.css" rel="stylesheet">-->
@@ -16,13 +18,18 @@ $_SESSION['username']='ssinghmy';
             min-width: 1400px;
             //background-color: #ff6599;
             //color:#fff;
+
+
+            background: #abbaab; /* fallback for old browsers */
+            background: -webkit-linear-gradient(to left, #abbaab , #ffffff); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #abbaab , #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         }
 
         .sidenav {
             display:block;
             float: left;
             height: 100%;
-            width: 230px;
+            width: 250px;
             position: fixed;
             /*z-index: 1;*/
 
@@ -52,9 +59,9 @@ $_SESSION['username']='ssinghmy';
         .main-container{
             display: inline-block;
             padding-left: 20px;
-            margin-top: 0px;
-            margin-left:350px;
-            width:600px;
+            margin-top: 10px;
+            margin-left:380px;
+            width:700px;
         }
     </style>
 </head>
@@ -87,9 +94,9 @@ $_SESSION['username']='ssinghmy';
     </nav>
 </div>
 <div>
-    <div class="sidenav">
+    <div class="sidenav z-depth-5">
         <!--    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
-        <a href="#">Problems</a>
+        <a href="index.php">Problems</a>
         <a href="#">Submissions</a>
         <a href="#">Scoreboard</a>
     </div>
