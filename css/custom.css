@@ -48,3 +48,11 @@
     background-color: #1e7736;
     color:white;
 }
+
+
+.custom-table-container{
+    //border: 2px solid grey;
+    padding:10px;
+    background-color: whitesmoke;
+    box-shadow: grey 5px 15px 29px;
+}

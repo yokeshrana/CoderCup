@@ -34,6 +34,8 @@ $title = '';
             /*overflow-x: hidden;*/
             /*transition: 0.5s;*/
             padding-top: 160px;
+            box-shadow: grey 15px 2px 10px;
+
         }
 
         .sidenav a {
@@ -46,6 +48,7 @@ $title = '';
             display: block;
             transition: 0.3s
             width: 100%;
+
         }
 
         .sidenav a:hover, .offcanvas a:focus {
@@ -79,7 +82,7 @@ $title = '';
     <div class="sidenav z-depth-5">
         <!--    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
         <a href="index.php">Problems</a>
-        <a href="#">Submissions</a>
+        <a href="submissions.php">Submissions</a>
         <a href="#">Scoreboard</a>
     </div>
 
