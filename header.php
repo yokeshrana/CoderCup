@@ -1,14 +1,19 @@
 <?php
 $_SESSION['username'] = 'ssinghmy';
 
-$title = '';
 ?>
 <html xmlns="http://www.w3.org/1999/html">
+<?php
+if (!isset($_SESSION['started']))
+  $_SESSION['started']=time();
 
+?>
 <head>
     <title>CoderCup</title>
     <link href="css/materialize.min.css" rel="stylesheet">
     <link href="css/custom.css" rel="stylesheet">
+
+
     <!--    <link href="css/bootstrap-responsive.css" rel="stylesheet">-->
     <style>
         body {
@@ -63,6 +68,8 @@ $title = '';
             width: 800px;
         }
     </style>
+
+
 </head>
 
 <body>
@@ -72,6 +79,8 @@ $title = '';
             <a href="#!" class="brand-logo text-black"
                style="font-family: mono, sans-serif">&nbsp&nbspCoderCup!</span></a>
             <ul class="right hide-on-med-and-down">
+                <li>Time Left : <span id="timer_text"> 2:00</span> </li>
+
                 <li><a href="#">Logged in as : <?php echo $_SESSION['username']; ?></a></li>
                 <li><a href="#">Log Out</a></li>
             </ul>
@@ -88,4 +97,32 @@ $title = '';
 
     <div class="main-container">
 
+      <script type="text/javascript">
+      var timeoutHandle;
+      function timelimit(minutes) {
+          var seconds = 60;
+          var mins = minutes;
+          function update() {
+              var counter = document.getElementById("timer_text");
+              var current_minutes = mins-1
+              seconds--;
+              counter.innerHTML =
+              current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+              if( seconds > 0 ) {
+                  timeoutHandle=setTimeout(update, 1000);
+              } else {
 
+                  if(mins > 1){
+                     setTimeout(function () { timelimit(mins - 1); }, 1000);
+
+                  }
+              }
+          }
+          update();
+      }
+
+      timelimit(2);
+
+      </script>
+
+  <script type="text/javascript" src="timer.js"></script>

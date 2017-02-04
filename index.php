@@ -8,7 +8,9 @@ require_once('includes/bootstrap.php');
 include('header.php');
 
 $con = dbConnect();
+?>
 
+<?php
 if (isset($_GET['success']))
     echo("<div class=\"alert alert-success\">\nCongratulations! Your code has been submitted\n</div>");
 ?>
@@ -31,7 +33,7 @@ if (isset($_GET['success']))
             $url = "submit.php?id=".$row['id'];
             $text = htmlentities($row['text']);
 
-            //Determine whether the problem has been solved or just attempted for this user
+            //Determine whether the problem has been solved or just attempted for this user   //in sql a statuscode field is present
             $sql = "SELECT statusCode FROM submissions WHERE (username='".$_SESSION['username'].
                 "' AND problem_id='".$row['id']."')";
             $res = mysqli_query($con, $sql);
@@ -63,7 +65,7 @@ if (isset($_GET['success']))
             <a href=\"{$url}\" target='_blank' class='blue-text text-darken-4'>Click to solve this</a>
             <a class=\"right\">{$status}</a>
         </div>
-   
+
 
     </div>
             ";
@@ -72,7 +74,9 @@ if (isset($_GET['success']))
     ?>
     </ul>
 </div>
+<?php
+ include('footer.php'); ?>
 
-
-
-<?php include('footer.php'); ?>
+<?php
+session_destroy();
+ ?>
