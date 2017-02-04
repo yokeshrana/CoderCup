@@ -21,5 +21,17 @@ function unifyEOL($text) //unifies line endings so that it won't result in probl
 
 }
 
+function shortenText($text)
+{
+    $shortenLength = 150;
+
+    if (strlen($text)>$shortenLength)
+    {
+        return substr($text, 0, $shortenLength).'...';
+    }
+    else return $text;
+
+}
+
 
 ?>

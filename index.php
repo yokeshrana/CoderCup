@@ -29,7 +29,7 @@ if (isset($_GET['success']))
         while ($row = mysqli_fetch_assoc($result)) {
 //            echo("<li><a href=\"submit.php?id=" . $row['id'] . "\">" . $row['title'] . $tag . "</a></li>\n");
             $url = "submit.php?id=".$row['id'];
-            $text = htmlentities($row['text']);
+            $text = htmlentities(shortenText($row['text']));
 
             //Determine whether the problem has been solved or just attempted for this user
             $sql = "SELECT statusCode FROM submissions WHERE (username='".$_SESSION['username'].
@@ -49,7 +49,7 @@ if (isset($_GET['success']))
 
 
             echo "
-    <div class=\"card indigo darken-1 z-depth-4 white-text\" style=\"box-shadow: grey 7px 7px 10px;margin-bottom:30px;\">
+    <div class=\"card indigo darken-1 z-depth-4 white-text\" style=\"box-shadow: grey 10px 9px 3px;margin-bottom:30px;\">
         <div class=\"card-content\">
         <a href=\"{$url}\" target='_blank'>
             <span class='card-title white-text'>
