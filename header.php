@@ -1,6 +1,4 @@
 <?php
-$_SESSION['username'] = 'ssinghmy';
-
 $title = '';
 ?>
 <html xmlns="http://www.w3.org/1999/html">
@@ -73,7 +71,7 @@ $title = '';
                style="font-family: mono, sans-serif">&nbsp&lt/CoderCup&gt</span></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="#">Logged in as : <?php echo $_SESSION['username']; ?></a></li>
-                <li><a href="#">Log Out</a></li>
+                <li><a href="logout.php">Log Out</a></li>
             </ul>
         </div>
     </nav>

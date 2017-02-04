@@ -2,8 +2,8 @@
 
 require_once('includes/bootstrap.php');
 
-//if(!isLoggedin())
-//    header('location:login.php');
+if(!isLoggedin())
+    header('location:login.php');
 
 include('header.php');
 
