@@ -5,7 +5,7 @@ session_start();
 
 function isLoggedin()
 {
-    return isset($_SESSION['username']);
+    return isset($_SESSION['username']) ;
 }
 
 function dbConnect()

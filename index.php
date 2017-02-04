@@ -3,7 +3,7 @@
 require_once('includes/bootstrap.php');
 
 if(!isLoggedin())
-    header('location:login.php');
+    header('location:login.php?error=unauthorized');
 
 include('header.php');
 

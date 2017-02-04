@@ -12,8 +12,6 @@ $title = '';
         body {
             font-family: "Lato", sans-serif;
             min-width: 1400px;
-        / / background-color: #ff6599;
-        / / color: #fff;
 
             background: #abbaab; /* fallback for old browsers */
             background: -webkit-linear-gradient(to left, #abbaab, #ffffff); /* Chrome 10-25, Safari 5.1-6 */

@@ -1,12 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: fragger
- * Date: 2/4/17
- * Time: 9:37 PM
- */
 
+require_once ('includes/bootstrap.php');
+unset($_SESSION['username']);
 session_destroy();
+
 header('Location:login.php?action=logout');
 
 ?>
