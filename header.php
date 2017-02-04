@@ -70,7 +70,7 @@ $title = '';
     <nav>
         <div class="nav-wrapper blue-grey darken-3">
             <a href="#!" class="brand-logo text-black"
-               style="font-family: mono, sans-serif">&nbsp&nbspCoderCup!</span></a>
+               style="font-family: mono, sans-serif">&nbsp&lt/CoderCup&gt</span></a>
             <ul class="right hide-on-med-and-down">
                 <li><a href="#">Logged in as : <?php echo $_SESSION['username']; ?></a></li>
                 <li><a href="#">Log Out</a></li>

@@ -13,7 +13,7 @@ if (isset($_GET['success']))
     echo("<div class=\"alert alert-success\">\nCongratulations! Your code has been submitted\n</div>");
 ?>
 
-<div class="cards-container" style="padding-right:100px">
+<div class="cards-container" style="margin-right:100px">
     <div class="collapsible-header purple darken-4 z-depth-5 white-text"><b>AVAILABLE PROBLEMS</b></div>
     <br>
 
@@ -49,7 +49,7 @@ if (isset($_GET['success']))
 
 
             echo "
-    <div class=\"card indigo darken-1 z-depth-4 white-text\">
+    <div class=\"card indigo darken-1 z-depth-4 white-text\" style=\"box-shadow: grey 7px 7px 10px;margin-bottom:30px;\">
         <div class=\"card-content\">
         <a href=\"{$url}\" target='_blank'>
             <span class='card-title white-text'>

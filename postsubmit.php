@@ -66,17 +66,18 @@ if(is_numeric($_POST['id'])) {
 
                 if(trim($contents) == trim(unifyEOL($fields['output']))) {
                     // the expected output matched with the actual output
-                    $query = "UPDATE submissions SET status=2 WHERE (username='".$_SESSION['username']."' AND problem_id='".$_POST['id']."')";
+                    $query = "UPDATE submissions SET statusCode=2 WHERE (username='".$_SESSION['username']."' AND problem_id='".$_POST['id']."')";
                     mysqli_query($con, $query);
                     header("Location: index.php?success=1");
                 } else {
                     // Output mismatch => Wrong Answer
-                    $query = "UPDATE submissions SET status=1 WHERE (username='".$_SESSION['username']."' AND problem_id='".$_POST['id']."')";
+                    $query = "UPDATE submissions SET statusCode=1 WHERE (username='".$_SESSION['username']."' AND problem_id='".$_POST['id']."')";
                     mysqli_query($con, $query);
                     header("Location: submit.php?WAError=1&id=".$_POST['id']);
                 }
             } else if($status == 2) {
-                $query = "UPDATE submissions SET status=1 WHERE (username='".$_SESSION['username']."' AND problem_id='".$_POST['id']."')";
+                //Time limit exceeded
+                $query = "UPDATE submissions SET statusCode=1 WHERE (username='".$_SESSION['username']."' AND problem_id='".$_POST['id']."')";
                 mysqli_query($con, $query);
                 header("Location: submit.php?TleError=1&id=".$_POST['id']);
             }
