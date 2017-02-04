@@ -1,0 +1,4 @@
+abc.c: In function ‘main’:
+abc.c:6:1: error: expected ‘;’ before ‘}’ token
+ }
+ ^
