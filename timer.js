@@ -1,5 +1,5 @@
-
 var timeoutHandle;
+
 function timelimit(minutes) {
     var seconds = 60;
     var mins = minutes;
@@ -21,5 +21,3 @@ function timelimit(minutes) {
     }
     update();
 }
-
-timelimit(2);

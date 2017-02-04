@@ -4,9 +4,10 @@ $_SESSION['username'] = 'ssinghmy';
 ?>
 <html xmlns="http://www.w3.org/1999/html">
 <?php
-if (!isset($_SESSION['started']))
-  $_SESSION['started']=time();
-
+if (!isset($_SESSION['starting']))
+  $_SESSION['starting']=time();
+  if (!isset($_SESSION['finishing']))
+$_SESSION['finishing']=$_SESSION['starting']+3000;
 ?>
 <head>
     <title>CoderCup</title>
@@ -81,7 +82,7 @@ if (!isset($_SESSION['started']))
             <ul class="right hide-on-med-and-down">
                 <li>Time Left : <span id="timer_text"> 2:00</span> </li>
 
-                <li><a href="#">Logged in as : <?php echo $_SESSION['username']; ?></a></li>
+                <li><a href="#">Logged in as : <?php echo $_SESSION['username'] ;echo $_SESSION['starting']."  ";echo $_SESSION['finishing']; ?></a></li>
                 <li><a href="#">Log Out</a></li>
             </ul>
         </div>
@@ -98,31 +99,7 @@ if (!isset($_SESSION['started']))
     <div class="main-container">
 
       <script type="text/javascript">
-      var timeoutHandle;
-      function timelimit(minutes) {
-          var seconds = 60;
-          var mins = minutes;
-          function update() {
-              var counter = document.getElementById("timer_text");
-              var current_minutes = mins-1
-              seconds--;
-              counter.innerHTML =
-              current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
-              if( seconds > 0 ) {
-                  timeoutHandle=setTimeout(update, 1000);
-              } else {
-
-                  if(mins > 1){
-                     setTimeout(function () { timelimit(mins - 1); }, 1000);
-
-                  }
-              }
-          }
-          update();
-      }
-
-      timelimit(2);
-
+      timelimit('<?php $curr=time();  $gap=$_SESSION['finishing']-$curr; echo $gap;  ?>');
       </script>
 
   <script type="text/javascript" src="timer.js"></script>
