@@ -1,4 +1,4 @@
-<script type="text/javascript">
+
 var timeoutHandle;
 function timelimit(minutes) {
     var seconds = 60;
@@ -23,7 +23,3 @@ function timelimit(minutes) {
 }
 
 timelimit(2);
-
-</script>
-
-<script type="text/javascript" src="timer.js"></script>
