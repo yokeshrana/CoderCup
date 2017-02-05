@@ -1,13 +1,10 @@
 <?php
 $_SESSION['username'] = 'ssinghmy';
-
 ?>
 <html xmlns="http://www.w3.org/1999/html">
 <?php
-if (!isset($_SESSION['starting']))
-  $_SESSION['starting']=time();
-  if (!isset($_SESSION['finishing']))
-$_SESSION['finishing']=$_SESSION['starting']+3000;
+if (!isset($_SESSION['started']))
+  $_SESSION['started']=time();
 ?>
 <head>
     <title>CoderCup</title>
@@ -22,12 +19,10 @@ $_SESSION['finishing']=$_SESSION['starting']+3000;
             min-width: 1400px;
         / / background-color: #ff6599;
         / / color: #fff;
-
             background: #abbaab; /* fallback for old browsers */
             background: -webkit-linear-gradient(to left, #abbaab, #ffffff); /* Chrome 10-25, Safari 5.1-6 */
             background: linear-gradient(to left, #abbaab, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         }
-
         .sidenav {
             display: block;
             float: left;
@@ -35,15 +30,12 @@ $_SESSION['finishing']=$_SESSION['starting']+3000;
             width: 250px;
             position: fixed;
             /*z-index: 1;*/
-
             background-color: #1d2731;
             /*overflow-x: hidden;*/
             /*transition: 0.5s;*/
             padding-top: 160px;
             box-shadow: grey 15px 2px 10px;
-
         }
-
         .sidenav a {
             padding: 8px 8px 8px 32px;
             margin-bottom: 7px;
@@ -54,13 +46,10 @@ $_SESSION['finishing']=$_SESSION['starting']+3000;
             display: block;
             transition: 0.3s
             width: 100%;
-
         }
-
         .sidenav a:hover, .offcanvas a:focus {
             color: #bfb1be;
         }
-
         .main-container {
             display: inline-block;
             padding-left: 20px;
@@ -82,7 +71,7 @@ $_SESSION['finishing']=$_SESSION['starting']+3000;
             <ul class="right hide-on-med-and-down">
                 <li>Time Left : <span id="timer_text"> 2:00</span> </li>
 
-                <li><a href="#">Logged in as : <?php echo $_SESSION['username'] ;echo $_SESSION['starting']."  ";echo $_SESSION['finishing']; ?></a></li>
+                <li><a href="#">Logged in as : <?php echo $_SESSION['username']; ?></a></li>
                 <li><a href="#">Log Out</a></li>
             </ul>
         </div>
@@ -98,8 +87,8 @@ $_SESSION['finishing']=$_SESSION['starting']+3000;
 
     <div class="main-container">
 
+        <script type="text/javascript" src="timer.js"></script>
       <script type="text/javascript">
-      timelimit('<?php $curr=time();  $gap=$_SESSION['finishing']-$curr; echo $gap;  ?>');
+    
+      timelimit(2);
       </script>
-
-  <script type="text/javascript" src="timer.js"></script>
