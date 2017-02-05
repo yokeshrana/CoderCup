@@ -74,6 +74,7 @@ else if(!isLoggedin())
             <a href="#!" class="brand-logo text-black"
                style="font-family: mono, sans-serif">&nbsp&lt/CoderCup&gt</span></a>
             <ul class="right hide-on-med-and-down">
+                <li>Time-remaining :<span id="timer_text">2:00</span></li>
                 <li><a href="#">Logged in as : <?php echo $_SESSION['username']; ?></a></li>
                 <li><a href="logout.php">Log Out</a></li>
             </ul>
@@ -83,11 +84,34 @@ else if(!isLoggedin())
 <div>
     <div class="sidenav z-depth-5">
         <!--    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
+        <a href="instructions.php">Instructions</a>
         <a href="index.php">Problems</a>
         <a href="submissions.php">Submissions</a>
         <a href="#">Scoreboard</a>
     </div>
 
     <div class="main-container">
-
-
+<script type="text/javascript" >
+var timeoutHandle;
+//DEFINING OF SESSION REMAINING !!!!
+function timelimit(minutes) {
+    var seconds = 60;
+    var mins = minutes;
+    function update() {
+        var counter = document.getElementById("timer_text");
+        var current_minutes = mins-1
+        seconds--;
+        counter.innerHTML =current_minutes.toString() + ":" + (seconds < 10 ? "0" : "") + String(seconds);
+        if( seconds > 0 ) {
+            timeoutHandle=setTimeout(update, 1000);
+        } else {
+            if(mins > 1){
+               setTimeout(function () { timelimit(mins - 1); }, 1000);
+            }
+        }
+    }
+    //UPDATE METHOD TO UPDATE AT REGULAR INTERVALS
+    update();
+}
+timelimit(2);
+</script>
