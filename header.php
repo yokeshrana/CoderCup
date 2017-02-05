@@ -78,8 +78,9 @@ if (!isset($_SESSION['started']))
     </nav>
 </div>
 <div>
-    <div class="sidenav z-depth-5">
+    <div class="sidenav z-depth-8 ">
         <!--    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
+        <a href="Instructions.php">Instructions</a>
         <a href="index.php">Problems</a>
         <a href="submissions.php">Submissions</a>
         <a href="#">Scoreboard</a>
@@ -89,6 +90,6 @@ if (!isset($_SESSION['started']))
 
         <script type="text/javascript" src="timer.js"></script>
       <script type="text/javascript">
-    
+
       timelimit(2);
       </script>
