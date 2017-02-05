@@ -34,6 +34,7 @@ if (isLoggedin()) {
             header('Location:admin/index.php');
         } else {
             $_SESSION['username'] = $username;
+            setFirstStampForUser($con, $username);
             header('Location:index.php?welcome=1');
         }
     } else //Login details did not match
