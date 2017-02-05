@@ -78,7 +78,7 @@ else if(!isLoggedin())
             <a href="#!" class="brand-logo text-black"
                style="font-family: mono, sans-serif">&nbsp&lt/CoderCup&gt</span></a>
             <ul class="right hide-on-med-and-down">
-                <li>Time-remaining :<span id="timer_text">2:00</span></li>
+
                 <li><a href="#">Logged in as : <?php echo $_SESSION['username']; ?></a></li>
                 <li><a href="logout.php">Log Out</a></li>
             </ul>
