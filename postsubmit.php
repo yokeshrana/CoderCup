@@ -57,7 +57,7 @@ if(is_numeric($_POST['id'])) {
                 $contents = $contents.fgets($socket);
             if($status == 0) {
                 // Case of compilation error
-                $query = "UPDATE submissions SET status=1 WHERE (username='".$_SESSION['username']."' AND problem_id='".$_POST['id']."')";
+                $query = "UPDATE submissions SET statusCode=1 WHERE (username='".$_SESSION['username']."' AND problem_id='".$_POST['id']."')";
                 mysqli_query($con, $query);
                 $_SESSION['CompilationError'] = trim($contents);
                 header("Location: submit.php?CompilationError=1&id=".$_POST['id']);
@@ -83,6 +83,5 @@ if(is_numeric($_POST['id'])) {
             }
         } else
             header("Location: submit.php?ServerError=1&id=".$_POST['id']); // compiler server not running
-
 }
 ?>

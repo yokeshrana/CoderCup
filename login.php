@@ -8,8 +8,19 @@ if (isLoggedin()) {
 
     $con = dbConnect();
 
+
+
+
     $username = mysqli_real_escape_string($con, trim($_POST['username']));
     $password = mysqli_real_escape_string($con, trim($_POST['password']));
+
+    if(!isContestOnline($con) && $username!='admin')
+    {
+        header('location:login.php?error=contestoff');
+        die();
+    }
+
+
     $sql = "SELECT username FROM users WHERE username='" . $username . "' AND password='" . $password . "'";
 
     $result = mysqli_query($con, $sql);
@@ -28,7 +39,7 @@ if (isLoggedin()) {
     } else //Login details did not match
     {
         if ($username == 'admin')
-            header('Location:login.php?error=AdminKeSathKhilwad');
+            header('Location:login.php?error=admin');
         //echo($sql); die($result);
         else
             header('Location:login.php?error=invalid');
@@ -135,11 +146,13 @@ if (isLoggedin()) {
 <div class="main-container">
     <div class="alert-warn">
         <?php
+        if (isset($_GET['error']) && $_GET['error'] == 'contestoff')
+            echo 'Contest is offline. Try later!';
         if (isset($_GET['error']) && $_GET['error'] == 'invalid')
             echo 'Incorrect Credentials!';
         else if (isset($_GET['error']) && $_GET['error'] == 'unauthorized')
             echo 'Login First!';
-        else if (isset($_GET['error']) && $_GET['error'] == 'AdminKeSathKhilwad')
+        else if (isset($_GET['error']) && $_GET['error'] == 'admin')
             echo 'Admin Se Mazak Nahi Bhai!';
         ?>
     </div>

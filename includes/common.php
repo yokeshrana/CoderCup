@@ -3,6 +3,11 @@
 
 session_start();
 
+function isAdminLoggedIn()
+{
+    return isset($_SESSION['admin']) && $_SESSION['admin']==true;
+}
+
 function isLoggedin()
 {
     return isset($_SESSION['username']) ;
@@ -12,6 +17,54 @@ function dbConnect()
 {
     include('params.php');
     return mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName);
+}
+
+function getContestTimelimit($con)
+{
+    $defaultTimelimit = 120; //in minutes
+
+    $sql = "SELECT value from settings WHERE param = 'timelimit'";
+    $result = mysqli_query($con, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $timelimit = $row['value'];
+    } else //the parameter is not present
+    {
+        $timelimit = $defaultTimelimit;
+        $sql = "INSERT INTO settings(param, value) VALUES('timelimit', '"."$timelimit')";
+        mysqli_query($con, $sql);
+    }
+
+    return $timelimit;
+}
+
+function isContestOnline($con)
+{
+    $defaultOnlineStatus = 0;
+    $sql = "SELECT value from settings WHERE param = 'isOnline'";
+    $result = mysqli_query($con, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+       $onlineStatus = $row['value'];
+    } else //the parameter is not present
+    {
+        $onlineStatus = $defaultOnlineStatus;
+        $sql = "INSERT INTO settings(param, value) VALUES('isOnline', '"."$onlineStatus')";
+        mysqli_query($con, $sql);
+    }
+
+    return $onlineStatus;
+}
+
+function setContestOnline($con)
+{
+    $sql = "UPDATE settings SET value='1' WHERE param = 'isOnline'";
+    mysqli_query($con, $sql);
+}
+function setContestOffline($con)
+{
+    $sql = "UPDATE settings SET value='0' WHERE param = 'isOnline'";
+    mysqli_query($con, $sql);
 }
 
 function unifyEOL($text) //unifies line endings so that it won't result in problems for different platforms

@@ -1,5 +1,11 @@
 <?php
 $title = '';
+$con = dbConnect();
+
+if(!isContestOnline($con))
+    header('location:login.php?error=contestoff');
+else if(!isLoggedin())
+    header('location:login.php?error=unauthorized');
 ?>
 <html xmlns="http://www.w3.org/1999/html">
 

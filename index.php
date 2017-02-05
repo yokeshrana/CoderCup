@@ -2,12 +2,9 @@
 
 require_once('includes/bootstrap.php');
 
-if(!isLoggedin())
-    header('location:login.php?error=unauthorized');
+
 
 include('header.php');
-
-$con = dbConnect();
 
 if (isset($_GET['success']))
     echo("<div class=\"alert alert-success\">\nCongratulations! Your code has been submitted\n</div>");
