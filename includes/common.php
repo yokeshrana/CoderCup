@@ -21,13 +21,13 @@ function dbConnect()
 
 function setFirstStampForUser($con, $username){
     $timestamp = date('Y-m-d H:i:s');
-    $sql = "SELECT value from settings WHERE param = 'isOnline'";
+    $sql = "SELECT timeStarted from users WHERE username = '{$username}'";
     $result = mysqli_query($con, $sql);
 
     if(mysqli_num_rows($result)>0)
     {
         $row= mysqli_fetch_assoc($result);
-        if($row['timestarted']==0)
+        if($row['timeStarted']==0)
         {
             $sql = "UPDATE users SET timeStarted='1', firststamp='{$timestamp}' WHERE username = '{$username}'";
             mysqli_query($con, $sql);
@@ -47,6 +47,7 @@ function getRemTimeForUser($con, $username)
     }
 
     $firststamp = strtotime($firststamp);
+
 
     return $firststamp+(getContestTimelimit($con)*60) - $currentTimestamp;
 }

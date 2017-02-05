@@ -24,7 +24,7 @@ include('header.php');
         echo "<tr> <td> ".$row["username"]."</td> <td> " .$row["solved"]."</td> </tr>";
     }
 } else {
-    echo "0 results";
+    echo "Bhai koi to karo kuch";
 }
 
         ?>
