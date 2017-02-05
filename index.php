@@ -2,20 +2,15 @@
 
 require_once('includes/bootstrap.php');
 
-//if(!isLoggedin())
-//    header('location:login.php');
+
 
 include('header.php');
 
-$con = dbConnect();
-?>
-
-<?php
 if (isset($_GET['success']))
     echo("<div class=\"alert alert-success\">\nCongratulations! Your code has been submitted\n</div>");
 ?>
 
-<div class="cards-container" style="padding-right:100px">
+<div class="cards-container" style="margin-right:100px">
     <div class="collapsible-header purple darken-4 z-depth-5 white-text"><b>AVAILABLE PROBLEMS</b></div>
     <br>
 
@@ -31,9 +26,9 @@ if (isset($_GET['success']))
         while ($row = mysqli_fetch_assoc($result)) {
 //            echo("<li><a href=\"submit.php?id=" . $row['id'] . "\">" . $row['title'] . $tag . "</a></li>\n");
             $url = "submit.php?id=".$row['id'];
-            $text = htmlentities($row['text']);
+            $text = htmlentities(shortenText($row['text']));
 
-            //Determine whether the problem has been solved or just attempted for this user   //in sql a statuscode field is present
+            //Determine whether the problem has been solved or just attempted for this user
             $sql = "SELECT statusCode FROM submissions WHERE (username='".$_SESSION['username'].
                 "' AND problem_id='".$row['id']."')";
             $res = mysqli_query($con, $sql);
@@ -51,7 +46,7 @@ if (isset($_GET['success']))
 
 
             echo "
-    <div class=\"card indigo darken-1 z-depth-4 white-text\">
+    <div class=\"card indigo darken-1 z-depth-4 white-text\" style=\"box-shadow: grey 10px 9px 3px;margin-bottom:30px;\">
         <div class=\"card-content\">
         <a href=\"{$url}\" target='_blank'>
             <span class='card-title white-text'>
@@ -65,7 +60,7 @@ if (isset($_GET['success']))
             <a href=\"{$url}\" target='_blank' class='blue-text text-darken-4'>Click to solve this</a>
             <a class=\"right\">{$status}</a>
         </div>
-
+   
 
     </div>
             ";
@@ -74,9 +69,7 @@ if (isset($_GET['success']))
     ?>
     </ul>
 </div>
-<?php
- include('footer.php'); ?>
 
-<?php
-session_destroy();
- ?>
+
+
+<?php include('footer.php'); ?>

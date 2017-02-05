@@ -36,17 +36,22 @@
     padding:2px 8px;
     background-color: #5e3a16;
     color:white;
+    box-shadow: grey 3px 4px 2px;
 
 }
 .custom-label-status-nattempted{
     padding:2px 8px;
     background-color: #791d16;
     color:white;
+    box-shadow: grey 3px 4px 2px;
+
 }
 .custom-label-status-solved{
     padding:2px 8px;
     background-color: #1e7736;
     color:white;
+    box-shadow: grey 3px 4px 2px;
+
 }
 
 
