@@ -14,14 +14,13 @@ include('header.php');
 
         </tr>
         </thead>
-
-
+    
         <?php
         $query = "SELECT username,COUNT(problem_id) as solved  FROM submissions where statusCode=2  GROUP BY username ORDER BY COUNT(problem_id) DESC";
         $results = mysqli_query($con, $query);
         if ($results->num_rows > 0) {
     while($row = $results->fetch_assoc()) {
-        echo "<tr> <td> ".$row["username"]."</td> <td> " .$row["solved"]."</td> </tr>";
+        echo "<tr> <td > ".$row["username"]."</td> <td> " .$row["solved"]."</td> </tr>";
     }
 } else {
     echo "Bhai koi to karo kuch";
