@@ -16,7 +16,7 @@ include('header.php');
 
 <p>
   The Contest will be for First year students.They need to form a two memeber team for that and Provide their Team name to
-  the technical team cordinators .After that their passwords will be providedd to them by the cordiantors of technical team.
+  the technical team cordinators .After that their passwords will be provided to them by the cordinators of technical team.
 
  </p>
 
