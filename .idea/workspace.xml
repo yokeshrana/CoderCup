@@ -3,15 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="893969b1-ba11-4df7-adcd-73a5082acf90" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/header.php" afterPath="$PROJECT_DIR$/admin/header.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/index.php" afterPath="$PROJECT_DIR$/admin/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/logout.php" afterPath="$PROJECT_DIR$/admin/logout.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/admin/problems.php" afterPath="$PROJECT_DIR$/admin/problems.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/header.php" afterPath="$PROJECT_DIR$/header.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/includes/common.php" afterPath="$PROJECT_DIR$/includes/common.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/login.php" afterPath="$PROJECT_DIR$/login.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/postsubmit.php" afterPath="$PROJECT_DIR$/postsubmit.php" />
     </list>
     <ignored path="codercup.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,17 +30,21 @@
       <file leaf-file-name="common.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/includes/common.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-362">
-              <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+            <state relative-caret-position="97">
+              <caret line="50" column="73" selection-start-line="50" selection-start-column="73" selection-end-line="50" selection-end-column="73" />
               <folding>
-                <element signature="n#setContestOnline#0;n#!!top" expanded="false" />
+                <element signature="n#getContestTimelimit#0;n#!!top" expanded="false" />
                 <element signature="n#setContestOffline#0;n#!!top" expanded="false" />
-                <marker date="1486272177678" expanded="true" signature="478:530" ph="SELECT value... settings" />
-                <marker date="1486272177678" expanded="true" signature="797:868" ph="INSERT INTO settings... " />
-                <marker date="1486272177678" expanded="true" signature="1013:1064" ph="SELECT value... settings" />
-                <marker date="1486272177678" expanded="true" signature="1339:1412" ph="INSERT INTO settings... " />
-                <marker date="1486272177678" expanded="true" signature="1531:1585" ph="UPDATE setti... " />
-                <marker date="1486272177678" expanded="true" signature="1667:1721" ph="UPDATE setti... " />
+                <marker date="1486277966583" expanded="true" signature="484:535" ph="SELECT value... settings" />
+                <marker date="1486277966583" expanded="true" signature="728:818" ph="UPDATE users... " />
+                <marker date="1486277966583" expanded="true" signature="1016:1063" ph="SELECT first... users" />
+                <marker date="1486277966583" expanded="true" signature="1016:1075" ph="SELECT first... users" />
+                <marker date="1486277966583" expanded="true" signature="1461:1513" ph="SELECT value... settings" />
+                <marker date="1486277966583" expanded="true" signature="1780:1851" ph="INSERT INTO settings... " />
+                <marker date="1486277966583" expanded="true" signature="1996:2047" ph="SELECT value... settings" />
+                <marker date="1486277966583" expanded="true" signature="2322:2395" ph="INSERT INTO settings... " />
+                <marker date="1486277966583" expanded="true" signature="2513:2567" ph="UPDATE setti... " />
+                <marker date="1486277966583" expanded="true" signature="2649:2703" ph="UPDATE setti... " />
               </folding>
             </state>
           </provider>
@@ -114,31 +112,41 @@
       <file leaf-file-name="login.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/login.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2682">
-              <caret line="149" column="48" selection-start-line="149" selection-start-column="48" selection-end-line="149" selection-end-column="48" />
+            <state relative-caret-position="486">
+              <caret line="36" column="50" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
               <folding>
-                <marker date="1486272621206" expanded="true" signature="510:542" ph="SELECT usern... users" />
-                <marker date="1486272621206" expanded="true" signature="510:552" ph="SELECT usern... users" />
-                <marker date="1486272621206" expanded="true" signature="510:585" ph="SELECT * FRO... users" />
-                <marker date="1486272621206" expanded="true" signature="510:586" ph="SELECT * FRO... users" />
-                <marker date="1486272621206" expanded="true" signature="510:589" ph="SELECT * FRO... users" />
-                <marker date="1486272621206" expanded="true" signature="510:604" ph="SELECT * FRO... users" />
+                <marker date="1486276881487" expanded="true" signature="510:542" ph="SELECT usern... users" />
+                <marker date="1486276881487" expanded="true" signature="510:552" ph="SELECT usern... users" />
+                <marker date="1486276881487" expanded="true" signature="510:585" ph="SELECT * FRO... users" />
+                <marker date="1486276881487" expanded="true" signature="510:586" ph="SELECT * FRO... users" />
+                <marker date="1486276881487" expanded="true" signature="510:589" ph="SELECT * FRO... users" />
+                <marker date="1486276881487" expanded="true" signature="510:604" ph="SELECT * FRO... users" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/admin/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+            <state relative-caret-position="90">
+              <caret line="5" column="65" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
               <folding>
                 <element signature="e#718#2038#0#HTML" expanded="false" />
                 <marker date="1486273953418" expanded="true" signature="193:214" ph="INSERT INTO settings... " />
                 <marker date="1486273953418" expanded="true" signature="193:257" ph="INSERT INTO settings... " />
                 <marker date="1486273953418" expanded="true" signature="193:258" ph="INSERT INTO settings... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/header.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="173">
+              <caret line="109" column="51" selection-start-line="109" selection-start-column="51" selection-end-line="109" selection-end-column="51" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -166,12 +174,12 @@
         <option value="$PROJECT_DIR$/postsubmit.php" />
         <option value="$PROJECT_DIR$/admin/logout.php" />
         <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/includes/common.php" />
-        <option value="$PROJECT_DIR$/header.php" />
-        <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/admin/header.php" />
         <option value="$PROJECT_DIR$/admin/problems.php" />
         <option value="$PROJECT_DIR$/admin/index.php" />
+        <option value="$PROJECT_DIR$/login.php" />
+        <option value="$PROJECT_DIR$/includes/common.php" />
+        <option value="$PROJECT_DIR$/header.php" />
       </list>
     </option>
   </component>
@@ -341,15 +349,15 @@
       <workItem from="1486107876644" duration="1625000" />
       <workItem from="1486124293830" duration="13446000" />
       <workItem from="1486213036933" duration="20810000" />
-      <workItem from="1486271947413" duration="2046000" />
+      <workItem from="1486271947413" duration="6203000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61227000" />
+    <option name="totallyTimeSpent" value="65384000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1366" height="738" extended-state="1" />
+    <frame x="0" y="0" width="1366" height="738" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12822458" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -473,14 +481,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#setContestOnline#0;n#!!top" expanded="false" />
+            <element signature="n#getContestTimelimit#0;n#!!top" expanded="false" />
             <element signature="n#setContestOffline#0;n#!!top" expanded="false" />
-            <marker date="1486272177678" expanded="true" signature="478:530" ph="SELECT value... settings" />
-            <marker date="1486272177678" expanded="true" signature="797:868" ph="INSERT INTO settings... " />
-            <marker date="1486272177678" expanded="true" signature="1013:1064" ph="SELECT value... settings" />
-            <marker date="1486272177678" expanded="true" signature="1339:1412" ph="INSERT INTO settings... " />
-            <marker date="1486272177678" expanded="true" signature="1531:1585" ph="UPDATE setti... " />
-            <marker date="1486272177678" expanded="true" signature="1667:1721" ph="UPDATE setti... " />
+            <marker date="1486277966583" expanded="true" signature="484:535" ph="SELECT value... settings" />
+            <marker date="1486277966583" expanded="true" signature="728:818" ph="UPDATE users... " />
+            <marker date="1486277966583" expanded="true" signature="1016:1063" ph="SELECT first... users" />
+            <marker date="1486277966583" expanded="true" signature="1016:1075" ph="SELECT first... users" />
+            <marker date="1486277966583" expanded="true" signature="1461:1513" ph="SELECT value... settings" />
+            <marker date="1486277966583" expanded="true" signature="1780:1851" ph="INSERT INTO settings... " />
+            <marker date="1486277966583" expanded="true" signature="1996:2047" ph="SELECT value... settings" />
+            <marker date="1486277966583" expanded="true" signature="2322:2395" ph="INSERT INTO settings... " />
+            <marker date="1486277966583" expanded="true" signature="2513:2567" ph="UPDATE setti... " />
+            <marker date="1486277966583" expanded="true" signature="2649:2703" ph="UPDATE setti... " />
           </folding>
         </state>
       </provider>
@@ -490,14 +502,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#setContestOnline#0;n#!!top" expanded="false" />
+            <element signature="n#getContestTimelimit#0;n#!!top" expanded="false" />
             <element signature="n#setContestOffline#0;n#!!top" expanded="false" />
-            <marker date="1486272177678" expanded="true" signature="478:530" ph="SELECT value... settings" />
-            <marker date="1486272177678" expanded="true" signature="797:868" ph="INSERT INTO settings... " />
-            <marker date="1486272177678" expanded="true" signature="1013:1064" ph="SELECT value... settings" />
-            <marker date="1486272177678" expanded="true" signature="1339:1412" ph="INSERT INTO settings... " />
-            <marker date="1486272177678" expanded="true" signature="1531:1585" ph="UPDATE setti... " />
-            <marker date="1486272177678" expanded="true" signature="1667:1721" ph="UPDATE setti... " />
+            <marker date="1486277966583" expanded="true" signature="484:535" ph="SELECT value... settings" />
+            <marker date="1486277966583" expanded="true" signature="728:818" ph="UPDATE users... " />
+            <marker date="1486277966583" expanded="true" signature="1016:1063" ph="SELECT first... users" />
+            <marker date="1486277966583" expanded="true" signature="1016:1075" ph="SELECT first... users" />
+            <marker date="1486277966583" expanded="true" signature="1461:1513" ph="SELECT value... settings" />
+            <marker date="1486277966583" expanded="true" signature="1780:1851" ph="INSERT INTO settings... " />
+            <marker date="1486277966583" expanded="true" signature="1996:2047" ph="SELECT value... settings" />
+            <marker date="1486277966583" expanded="true" signature="2322:2395" ph="INSERT INTO settings... " />
+            <marker date="1486277966583" expanded="true" signature="2513:2567" ph="UPDATE setti... " />
+            <marker date="1486277966583" expanded="true" signature="2649:2703" ph="UPDATE setti... " />
           </folding>
         </state>
       </provider>
@@ -507,14 +523,18 @@
         <state relative-caret-position="288">
           <caret line="16" column="107" selection-start-line="16" selection-start-column="107" selection-end-line="16" selection-end-column="107" />
           <folding>
-            <element signature="n#setContestOnline#0;n#!!top" expanded="false" />
+            <element signature="n#getContestTimelimit#0;n#!!top" expanded="false" />
             <element signature="n#setContestOffline#0;n#!!top" expanded="false" />
-            <marker date="1486272177678" expanded="true" signature="478:530" ph="SELECT value... settings" />
-            <marker date="1486272177678" expanded="true" signature="797:868" ph="INSERT INTO settings... " />
-            <marker date="1486272177678" expanded="true" signature="1013:1064" ph="SELECT value... settings" />
-            <marker date="1486272177678" expanded="true" signature="1339:1412" ph="INSERT INTO settings... " />
-            <marker date="1486272177678" expanded="true" signature="1531:1585" ph="UPDATE setti... " />
-            <marker date="1486272177678" expanded="true" signature="1667:1721" ph="UPDATE setti... " />
+            <marker date="1486277966583" expanded="true" signature="484:535" ph="SELECT value... settings" />
+            <marker date="1486277966583" expanded="true" signature="728:818" ph="UPDATE users... " />
+            <marker date="1486277966583" expanded="true" signature="1016:1063" ph="SELECT first... users" />
+            <marker date="1486277966583" expanded="true" signature="1016:1075" ph="SELECT first... users" />
+            <marker date="1486277966583" expanded="true" signature="1461:1513" ph="SELECT value... settings" />
+            <marker date="1486277966583" expanded="true" signature="1780:1851" ph="INSERT INTO settings... " />
+            <marker date="1486277966583" expanded="true" signature="1996:2047" ph="SELECT value... settings" />
+            <marker date="1486277966583" expanded="true" signature="2322:2395" ph="INSERT INTO settings... " />
+            <marker date="1486277966583" expanded="true" signature="2513:2567" ph="UPDATE setti... " />
+            <marker date="1486277966583" expanded="true" signature="2649:2703" ph="UPDATE setti... " />
           </folding>
         </state>
       </provider>
@@ -610,7 +630,7 @@
         <state relative-caret-position="828">
           <caret line="48" column="21" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
           <folding>
-            <element signature="e#6#142#0#PHP" expanded="true" />
+            <element signature="e#6#142#0#PHP" expanded="false" />
             <marker date="1486233159657" expanded="true" signature="218:237" ph="SELECT * FRO... prefs" />
             <marker date="1486233159657" expanded="true" signature="325:392" ph="SELECT statu... users" />
             <marker date="1486233159657" expanded="true" signature="1151:1349" ph="INSERT INTO `solve`... " />
@@ -630,14 +650,18 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#setContestOnline#0;n#!!top" expanded="false" />
+            <element signature="n#getContestTimelimit#0;n#!!top" expanded="false" />
             <element signature="n#setContestOffline#0;n#!!top" expanded="false" />
-            <marker date="1486272177678" expanded="true" signature="478:530" ph="SELECT value... settings" />
-            <marker date="1486272177678" expanded="true" signature="797:868" ph="INSERT INTO settings... " />
-            <marker date="1486272177678" expanded="true" signature="1013:1064" ph="SELECT value... settings" />
-            <marker date="1486272177678" expanded="true" signature="1339:1412" ph="INSERT INTO settings... " />
-            <marker date="1486272177678" expanded="true" signature="1531:1585" ph="UPDATE setti... " />
-            <marker date="1486272177678" expanded="true" signature="1667:1721" ph="UPDATE setti... " />
+            <marker date="1486277966583" expanded="true" signature="484:535" ph="SELECT value... settings" />
+            <marker date="1486277966583" expanded="true" signature="728:818" ph="UPDATE users... " />
+            <marker date="1486277966583" expanded="true" signature="1016:1063" ph="SELECT first... users" />
+            <marker date="1486277966583" expanded="true" signature="1016:1075" ph="SELECT first... users" />
+            <marker date="1486277966583" expanded="true" signature="1461:1513" ph="SELECT value... settings" />
+            <marker date="1486277966583" expanded="true" signature="1780:1851" ph="INSERT INTO settings... " />
+            <marker date="1486277966583" expanded="true" signature="1996:2047" ph="SELECT value... settings" />
+            <marker date="1486277966583" expanded="true" signature="2322:2395" ph="INSERT INTO settings... " />
+            <marker date="1486277966583" expanded="true" signature="2513:2567" ph="UPDATE setti... " />
+            <marker date="1486277966583" expanded="true" signature="2649:2703" ph="UPDATE setti... " />
           </folding>
         </state>
       </provider>
@@ -708,14 +732,18 @@
         <state relative-caret-position="54">
           <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
           <folding>
-            <element signature="n#setContestOnline#0;n#!!top" expanded="false" />
+            <element signature="n#getContestTimelimit#0;n#!!top" expanded="false" />
             <element signature="n#setContestOffline#0;n#!!top" expanded="false" />
-            <marker date="1486272177678" expanded="true" signature="478:530" ph="SELECT value... settings" />
-            <marker date="1486272177678" expanded="true" signature="797:868" ph="INSERT INTO settings... " />
-            <marker date="1486272177678" expanded="true" signature="1013:1064" ph="SELECT value... settings" />
-            <marker date="1486272177678" expanded="true" signature="1339:1412" ph="INSERT INTO settings... " />
-            <marker date="1486272177678" expanded="true" signature="1531:1585" ph="UPDATE setti... " />
-            <marker date="1486272177678" expanded="true" signature="1667:1721" ph="UPDATE setti... " />
+            <marker date="1486277966583" expanded="true" signature="484:535" ph="SELECT value... settings" />
+            <marker date="1486277966583" expanded="true" signature="728:818" ph="UPDATE users... " />
+            <marker date="1486277966583" expanded="true" signature="1016:1063" ph="SELECT first... users" />
+            <marker date="1486277966583" expanded="true" signature="1016:1075" ph="SELECT first... users" />
+            <marker date="1486277966583" expanded="true" signature="1461:1513" ph="SELECT value... settings" />
+            <marker date="1486277966583" expanded="true" signature="1780:1851" ph="INSERT INTO settings... " />
+            <marker date="1486277966583" expanded="true" signature="1996:2047" ph="SELECT value... settings" />
+            <marker date="1486277966583" expanded="true" signature="2322:2395" ph="INSERT INTO settings... " />
+            <marker date="1486277966583" expanded="true" signature="2513:2567" ph="UPDATE setti... " />
+            <marker date="1486277966583" expanded="true" signature="2649:2703" ph="UPDATE setti... " />
           </folding>
         </state>
       </provider>
@@ -860,6 +888,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="8" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -888,7 +917,7 @@
         <state relative-caret-position="172">
           <caret line="71" column="24" selection-start-line="71" selection-start-column="24" selection-end-line="71" selection-end-column="24" />
           <folding>
-            <element signature="e#6#142#0#PHP" expanded="true" />
+            <element signature="e#6#142#0#PHP" expanded="false" />
             <marker date="1486233159657" expanded="true" signature="218:237" ph="SELECT * FRO... prefs" />
             <marker date="1486233159657" expanded="true" signature="325:392" ph="SELECT statu... users" />
             <marker date="1486233159657" expanded="true" signature="1151:1349" ph="INSERT INTO `solve`... " />
@@ -917,23 +946,6 @@
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding>
             <element signature="e#6#87#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/includes/common.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-362">
-          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
-          <folding>
-            <element signature="n#setContestOnline#0;n#!!top" expanded="false" />
-            <element signature="n#setContestOffline#0;n#!!top" expanded="false" />
-            <marker date="1486272177678" expanded="true" signature="478:530" ph="SELECT value... settings" />
-            <marker date="1486272177678" expanded="true" signature="797:868" ph="INSERT INTO settings... " />
-            <marker date="1486272177678" expanded="true" signature="1013:1064" ph="SELECT value... settings" />
-            <marker date="1486272177678" expanded="true" signature="1339:1412" ph="INSERT INTO settings... " />
-            <marker date="1486272177678" expanded="true" signature="1531:1585" ph="UPDATE setti... " />
-            <marker date="1486272177678" expanded="true" signature="1667:1721" ph="UPDATE setti... " />
           </folding>
         </state>
       </provider>
@@ -969,34 +981,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/header.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/admin/header.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2682">
-          <caret line="149" column="48" selection-start-line="149" selection-start-column="48" selection-end-line="149" selection-end-column="48" />
-          <folding>
-            <marker date="1486272621206" expanded="true" signature="510:542" ph="SELECT usern... users" />
-            <marker date="1486272621206" expanded="true" signature="510:552" ph="SELECT usern... users" />
-            <marker date="1486272621206" expanded="true" signature="510:585" ph="SELECT * FRO... users" />
-            <marker date="1486272621206" expanded="true" signature="510:586" ph="SELECT * FRO... users" />
-            <marker date="1486272621206" expanded="true" signature="510:589" ph="SELECT * FRO... users" />
-            <marker date="1486272621206" expanded="true" signature="510:604" ph="SELECT * FRO... users" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1013,14 +1002,58 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/admin/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="19" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+        <state relative-caret-position="90">
+          <caret line="5" column="65" selection-start-line="5" selection-start-column="65" selection-end-line="5" selection-end-column="65" />
           <folding>
             <element signature="e#718#2038#0#HTML" expanded="false" />
             <marker date="1486273953418" expanded="true" signature="193:214" ph="INSERT INTO settings... " />
             <marker date="1486273953418" expanded="true" signature="193:257" ph="INSERT INTO settings... " />
             <marker date="1486273953418" expanded="true" signature="193:258" ph="INSERT INTO settings... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="36" column="50" selection-start-line="36" selection-start-column="50" selection-end-line="36" selection-end-column="50" />
+          <folding>
+            <marker date="1486276881487" expanded="true" signature="510:542" ph="SELECT usern... users" />
+            <marker date="1486276881487" expanded="true" signature="510:552" ph="SELECT usern... users" />
+            <marker date="1486276881487" expanded="true" signature="510:585" ph="SELECT * FRO... users" />
+            <marker date="1486276881487" expanded="true" signature="510:586" ph="SELECT * FRO... users" />
+            <marker date="1486276881487" expanded="true" signature="510:589" ph="SELECT * FRO... users" />
+            <marker date="1486276881487" expanded="true" signature="510:604" ph="SELECT * FRO... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/includes/common.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="50" column="73" selection-start-line="50" selection-start-column="73" selection-end-line="50" selection-end-column="73" />
+          <folding>
+            <element signature="n#getContestTimelimit#0;n#!!top" expanded="false" />
+            <element signature="n#setContestOffline#0;n#!!top" expanded="false" />
+            <marker date="1486277966583" expanded="true" signature="484:535" ph="SELECT value... settings" />
+            <marker date="1486277966583" expanded="true" signature="728:818" ph="UPDATE users... " />
+            <marker date="1486277966583" expanded="true" signature="1016:1063" ph="SELECT first... users" />
+            <marker date="1486277966583" expanded="true" signature="1016:1075" ph="SELECT first... users" />
+            <marker date="1486277966583" expanded="true" signature="1461:1513" ph="SELECT value... settings" />
+            <marker date="1486277966583" expanded="true" signature="1780:1851" ph="INSERT INTO settings... " />
+            <marker date="1486277966583" expanded="true" signature="1996:2047" ph="SELECT value... settings" />
+            <marker date="1486277966583" expanded="true" signature="2322:2395" ph="INSERT INTO settings... " />
+            <marker date="1486277966583" expanded="true" signature="2513:2567" ph="UPDATE setti... " />
+            <marker date="1486277966583" expanded="true" signature="2649:2703" ph="UPDATE setti... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="109" column="51" selection-start-line="109" selection-start-column="51" selection-end-line="109" selection-end-column="51" />
+          <folding />
         </state>
       </provider>
     </entry>

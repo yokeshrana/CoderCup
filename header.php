@@ -6,6 +6,10 @@ if(!isContestOnline($con))
     header('location:login.php?error=contestoff');
 else if(!isLoggedin())
     header('location:login.php?error=unauthorized');
+
+
+//Calculate time left
+
 ?>
 <html xmlns="http://www.w3.org/1999/html">
 
@@ -113,5 +117,5 @@ function timelimit(minutes) {
     //UPDATE METHOD TO UPDATE AT REGULAR INTERVALS
     update();
 }
-timelimit(2);
+timelimit(Math.floor(<?php echo getRemTimeForUser($con, $_SESSION['username']); ?>/60));
 </script>

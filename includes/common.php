@@ -19,6 +19,38 @@ function dbConnect()
     return mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName);
 }
 
+function setFirstStampForUser($con, $username){
+    $timestamp = date('Y-m-d H:i:s');
+    $sql = "SELECT value from settings WHERE param = 'isOnline'";
+    $result = mysqli_query($con, $sql);
+
+    if(mysqli_num_rows($result)>0)
+    {
+        $row= mysqli_fetch_assoc($result);
+        if($row['timestarted']==0)
+        {
+            $sql = "UPDATE users SET timeStarted='1', firststamp='{$timestamp}' WHERE username = '{$username}'";
+            mysqli_query($con, $sql);
+        }
+    }
+
+}
+function getRemTimeForUser($con, $username)
+{
+    $currentTimestamp = strtotime(date('Y-m-d H:i:s'));
+    $firststamp = null;
+    $sql = "SELECT firststamp from users WHERE username = '{$username}'";
+    $result = mysqli_query($con, $sql);
+    if(mysqli_num_rows($result)>0) {
+        $row = mysqli_fetch_assoc($result);
+        $firststamp = $row['firststamp'];
+    }
+
+    $firststamp = strtotime($firststamp);
+
+    return $firststamp+(getContestTimelimit($con)*60) - $currentTimestamp;
+}
+
 function getContestTimelimit($con)
 {
     $defaultTimelimit = 120; //in minutes
@@ -55,7 +87,6 @@ function isContestOnline($con)
 
     return $onlineStatus;
 }
-
 function setContestOnline($con)
 {
     $sql = "UPDATE settings SET value='1' WHERE param = 'isOnline'";
