@@ -11,11 +11,11 @@ if (isset($_GET['success']))
 ?>
 
 <div class="cards-container" style="margin-right:100px">
-    <div class="collapsible-header purple darken-4 z-depth-5 white-text"><b>AVAILABLE PROBLEMS</b></div>
+    <div class="collapsible-header purple darken-4 z-depth-5 white-text"><b>AVAILABLE PROBLEMS<span style="position:relative; right:-300px;">Time-remaining :<span id="timer_text">2:00</span></span></b></div>
     <br>
 
 <!--    Start Listing All problems-->
-
+  <div  ></div>
 
     <?php
     $query = "SELECT * FROM problems";
@@ -60,7 +60,7 @@ if (isset($_GET['success']))
             <a href=\"{$url}\" target='_blank' class='blue-text text-darken-4'>Click to solve this</a>
             <a class=\"right\">{$status}</a>
         </div>
-   
+
 
     </div>
             ";
@@ -69,7 +69,11 @@ if (isset($_GET['success']))
     ?>
     </ul>
 </div>
+<script type="text/javascript" src="js/timer.js">
 
-
+</script>
+<script type="text/javascript" >
+timelimit(Math.floor(<?php echo getRemTimeForUser($con, $_SESSION['username']); ?>/60));
+</script>
 
 <?php include('footer.php'); ?>

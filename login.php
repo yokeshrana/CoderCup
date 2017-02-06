@@ -7,10 +7,6 @@ if (isLoggedin()) {
 } else if (isset($_POST['username']) && isset($_POST['password'])) {
 
     $con = dbConnect();
-
-
-
-
     $username = mysqli_real_escape_string($con, trim($_POST['username']));
     $password = mysqli_real_escape_string($con, trim($_POST['password']));
 
