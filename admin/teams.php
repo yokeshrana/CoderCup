@@ -29,7 +29,7 @@ include('header.php');
                                                    </div>
                                                </div>
                                                <div class="row">
-                                                   <div class="left-input-detail col s4 center">TEAM PASSWORD</div>
+                                                   <div class="left-input-detail col s4 center">TEAM PASSWORDS</div>
                                                    <div class="col s8">
                                                        <input name="teampassword" type="text" placeholder="Enter Team Password  "  ;>
 
