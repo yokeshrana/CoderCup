@@ -14,7 +14,6 @@ $con = dbConnect();
     <title>Admin-CoderCup</title>
     <link rel="stylesheet" href="../css/custom.css">
     <link rel="stylesheet" href="../css/materialize.min.css">
-
     <style>
 
 
@@ -115,6 +114,10 @@ $con = dbConnect();
                                          if ( isset( $_POST['form-submit'] ) ) {
                                            $username = $_POST['teamname'];
                                            $password = $_POST['teampassword'];
+                                           if($username==0||$password==0)
+                                           {
+                                             echo("<div class=\"alert alert-warning\">\nSOME ERROR EXIST CONTACT CORDINATORS!\n</div>");
+                                           }else{
                                            $sql = "INSERT INTO users ". "(username,password)". "VALUES('$username','$password')";
                                            $doquery= mysqli_query($con, $sql);
 
@@ -124,7 +127,7 @@ $con = dbConnect();
                                             }else {
                                             echo("<div class=\"alert alert-warning\">\nSOME ERROR EXIST CONTACT CORDINATORS!\n</div>");
                                             }
-     }
+                                          } }
                                                             ?>
 
 
@@ -145,19 +148,41 @@ $con = dbConnect();
       <table class="bordered centered">
           <thead>
           <tr class="grey darken-1 white-text">
-              <th data-field="title">Team Name</th>
-              <th data-field="attempts">Password</th>
-
+              <th ><pre>       Team Name      </pre> </th>
+              <th ><pre>           Password            </pre> </th>
+              <th ></th>
 
           </tr>
           </thead>
-
           <?php
           $query = "SELECT username ,password FROM users";
           $results = mysqli_query($con, $query);
           if ($results->num_rows > 0) {
       while($row = $results->fetch_assoc()) {
-          echo "<tr> <td > ".$row["username"]."</td> <td> " .$row["password"]."</td> </tr>";
+          echo "<tr> <td > ".$row["username"]."</td> <td> " .$row["password"]."</td> ";?>
+
+<td >
+  <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#changepass">Change Password</button>
+  <div id="changepass" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">CHANGE PASSWORDr</h4>
+      </div>
+      <div class="modal-body">
+        <p>body</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+</td></tr>
+
+            <?php
       }
   } else {
       echo "NO DATABASE PRESENT";
