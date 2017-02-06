@@ -61,7 +61,6 @@ $con = dbConnect();
                 <li><a href="index.php">Contest Settings</a></li>
                 <li><a href="problems.php">Problems</a></li>
                 <li><a href="teams.php">Teams</a></li>
-                <li><a href="changepass.php">Change Password</a></li>
                 <li><a href="logout.php">Log Out</a></li>
             </ul>
         </div>
