@@ -10,7 +10,7 @@ $con = dbConnect();
     <title>Admin-CoderCup</title>
     <link rel="stylesheet" href="../css/custom.css">
     <link rel="stylesheet" href="../css/materialize.min.css">
-    
+
     <style>
         body{
             background: #abbaab; /* fallback for old browsers */
@@ -69,4 +69,3 @@ $con = dbConnect();
 </div>
 
 <div class="main-container">
-
