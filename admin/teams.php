@@ -124,13 +124,7 @@ $con = dbConnect();
                                             }else {
                                             echo("<div class=\"alert alert-warning\">\nSOME ERROR EXIST CONTACT CORDINATORS!\n</div>");
                                             }
-
-
-
-
-
-
-                                                         }
+     }
                                                             ?>
 
 
