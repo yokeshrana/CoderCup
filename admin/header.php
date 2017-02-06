@@ -20,9 +20,7 @@ $con = dbConnect();
         .main-container{
             margin:0 200px;
             padding:20px 30px;
-            border-left: 1px solid black;
-            border-right: 1px solid black;
-            border-bottom: 1px solid black;
+
         }
         .left-input-detail{
             margin-top:10px;
@@ -66,5 +64,3 @@ $con = dbConnect();
         </div>
     </nav>
 </div>
-
-<div class="main-container">

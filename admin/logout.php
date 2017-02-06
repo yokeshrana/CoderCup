@@ -5,5 +5,5 @@ unset($_SESSION['admin']);
 session_destroy();
 
 header('Location:../login.php?action=logout');
-
+echo '<div class="main-container">';
 ?>
