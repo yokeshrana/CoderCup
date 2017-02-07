@@ -10,7 +10,7 @@ $con = dbConnect();
     <title>Admin-CoderCup</title>
     <link rel="stylesheet" href="../css/custom.css">
     <link rel="stylesheet" href="../css/materialize.min.css">
-    
+
     <style>
         body{
             background: #abbaab; /* fallback for old browsers */
@@ -20,9 +20,7 @@ $con = dbConnect();
         .main-container{
             margin:0 200px;
             padding:20px 30px;
-            border-left: 1px solid black;
-            border-right: 1px solid black;
-            border-bottom: 1px solid black;
+
         }
         .left-input-detail{
             margin-top:10px;
@@ -61,12 +59,8 @@ $con = dbConnect();
                 <li><a href="index.php">Contest Settings</a></li>
                 <li><a href="problems.php">Problems</a></li>
                 <li><a href="teams.php">Teams</a></li>
-                <li><a href="changepass.php">Change Password</a></li>
                 <li><a href="logout.php">Log Out</a></li>
             </ul>
         </div>
     </nav>
 </div>
-
-<div class="main-container">
-

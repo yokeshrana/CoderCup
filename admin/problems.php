@@ -12,7 +12,7 @@ if(isset($_POST['formSubmit']))
 
 }
 
-
+echo '<div class="main-container">';
 ?>
 
 <div class="card">
@@ -61,4 +61,3 @@ if(isset($_POST['formSubmit']))
 </div>
 
 <?php include "footer.php"; ?>
-

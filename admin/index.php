@@ -6,7 +6,7 @@ if (isset($_POST['timelimit'])) {
     $timelimit = mysqli_real_escape_string($con, $_POST['timelimit']);
     $sql = "UPDATE settings SET value='" . $timelimit . "' WHERE param='timelimit'";
     mysqli_query($con, $sql);
-    
+
     $isOnline = isset($_POST['isOnline'])?'1':'0';
     if($isOnline=='1') setContestOnline($con);
     else setContestOffline($con);
@@ -18,6 +18,7 @@ if (isset($_POST['timelimit'])) {
 }
 
 include('header.php');
+echo '<div class="main-container">';
 ?>
 
     <div class="card">
@@ -58,6 +59,3 @@ include('header.php');
 
 
 <?php include('footer.php');
-
-
-
