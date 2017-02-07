@@ -11,7 +11,7 @@ if (isset($_GET['success']))
 ?>
 
 <div class="cards-container" style="margin-right:100px">
-    <div class="collapsible-header purple darken-4 z-depth-5 white-text"><b>AVAILABLE PROBLEMS<span style="position:relative; right:-300px;">Time-remaining :<span id="timer_text">2:00</span></span></b></div>
+    <div class="collapsible-header purple darken-4 z-depth-5 white-text"><b>AVAILABLE PROBLEMS<span style="position:relative; right:-280px;">Time-remaining :<span id="timer_text">2:00</span></span></b></div>
     <br>
 
 <!--    Start Listing All problems-->
