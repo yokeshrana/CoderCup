@@ -4,7 +4,7 @@ include('header.php');
 $con = dbConnect();
 ?>
 
-<div class="custom-table-container">
+<!--  <div class="custom-table-container"> -->
     <p align="center" style="font-size:25px; color: #2c2c2c">Submissions</p>
     <hr>
     <table class="bordered centered">
@@ -45,3 +45,4 @@ $con = dbConnect();
         </tbody>
     </table>
 </div>
+<?php include('footer.php'); ?>

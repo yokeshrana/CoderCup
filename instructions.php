@@ -178,3 +178,5 @@ clarifications that have merit will be published on the contest page.
 </div>
 
 <br style="clear:both" />
+
+<?php include('footer.php'); ?>

@@ -21,7 +21,7 @@ else if(!isLoggedin($con))
     <style>
         body {
             font-family: "Lato", sans-serif;
-            min-width: 1400px;
+            /*min-width: 1400px;*/
 
             background: #abbaab; /* fallback for old browsers */
             background: -webkit-linear-gradient(to left, #abbaab, #ffffff); /* Chrome 10-25, Safari 5.1-6 */
@@ -86,7 +86,9 @@ else if(!isLoggedin($con))
     </nav>
 </div>
 <div>
-    <div class="sidenav z-depth-5">
+    <div class="sidenav z-depth-7">
+	<div style="position:fixed;top:100px ">
+<a  ><img src="cossco.png.png" width="200" height="60" /></a></div>	
         <!--    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>-->
         <a href="instructions.php">Instructions</a>
         <a href="index.php">Problems</a>

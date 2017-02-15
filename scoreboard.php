@@ -3,6 +3,7 @@ require_once('includes/bootstrap.php');
 include('header.php');
 
 ?>
+
 <div class="custom-table-container">
     <p align="center" style="font-size:25px; color: #2c2c2c">Scoreboard</p>
     <hr>
@@ -31,5 +32,9 @@ include('header.php');
 
 
 
-        <tbody>
+        
+		</table>
   </div>
+
+
+<?php include('footer.php'); ?>

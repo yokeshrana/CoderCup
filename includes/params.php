@@ -7,6 +7,7 @@ $dbUser = "root";
 $dbPassword = "";
 $dbName = "codercup";
 
+/*$compHost = "192.168.2.4"; */
 $compHost = "localhost";   //hostname for Java Compiler Server
 $compPort = 3029;          //port number for the same
 

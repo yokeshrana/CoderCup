@@ -152,8 +152,11 @@ if (isLoggedin($con)) {
 </head>
 
 <body>
+<?php include('logo.php'); ?>
 <div class="heading-container">
-    <h5 align="center" style="color:white;font-family: mono, sans-serif">&lt/CoderCup&gt Login</h5>
+  <h5 align="center" style="color:white;font-family: mono, sans-serif">&lt/CoderCup&gt Login</h5>
+
+  
 </div>
 <div class="main-container">
     <div class="alert-warn">
@@ -193,7 +196,7 @@ if (isLoggedin($con)) {
         </form>
     </div>
 </div>
-<div class="footer">Shashank Singh, Yokesh Rana - 2017</div>
+<div class="footer">Shashank Singh&nbsp  &  &nbsp&nbsp  Yokesh Rana </div>
 </body>
 
 </html>
