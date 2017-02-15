@@ -33,17 +33,20 @@ if (isLoggedin($con)) {
             if(getRemTimeForUser($con, $username)<=0)
             {
                  header('location:login.php?error=timeout');  
+
             }
 
-            if (isUserBanned($con, $username))
+            else if (isUserBanned($con, $username))
             {
                 header('location:login.php?error=banned');  
             }
 
-            $_SESSION['username'] = $username;
-            setFirstStampForUser($con, $username);
-            header('Location:index.php?welcome=1');
-
+            else
+            {
+                $_SESSION['username'] = $username;
+                setFirstStampForUser($con, $username);
+                header('Location:index.php?welcome=1');
+            }
         }
     } else //Login details did not match
     {

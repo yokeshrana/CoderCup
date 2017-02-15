@@ -50,17 +50,22 @@ function getRemTimeForUser($con, $username) //in seconds
 {
     $currentTimestamp = strtotime(date('Y-m-d H:i:s'));
     $firststamp = null;
-    $sql = "SELECT firststamp from users WHERE username = '{$username}'";
+    $sql = "SELECT timeStarted, firststamp from users WHERE username = '{$username}'";
     $result = mysqli_query($con, $sql);
     if(mysqli_num_rows($result)>0) {
         $row = mysqli_fetch_assoc($result);
         $firststamp = $row['firststamp'];
+        $timeStarted = $row['timeStarted'];
     }
 
-    $firststamp = strtotime($firststamp);
-
-
-    return $firststamp+(getContestTimelimit($con)*60) - $currentTimestamp;
+    if($timeStarted==0)
+        return getContestTimelimit($con)*60;
+    else
+    {
+        $firststamp = strtotime($firststamp);
+        return $firststamp+(getContestTimelimit($con)*60) - $currentTimestamp;
+    }
+    
 }
 
 function getContestTimelimit($con)
