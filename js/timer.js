@@ -1,6 +1,14 @@
 var timeoutHandle;
 //DEFINING OF SESSION REMAINING !!!!
 function timelimit(time) {
+
+    if(time<=0)
+    {
+        alert('Your time is out!');
+        self.location = "logout.php";
+    }
+
+
     var seconds = time%60;
     var mins = Math.floor(time/60);
     function update() {
@@ -21,9 +29,9 @@ function timelimit(time) {
         {
             timeoutHandle=setTimeout(update,1000);
         }
-        else if(mins>1)
+        else
         {
-            setTimeout(function () { timelimit((mins-1)*60-1); }, 1000);
+            setTimeout(function () { timelimit(mins*60-1); }, 1000);
         }
     }
     //UPDATE METHOD TO UPDATE AT REGULAR INTERVALS
