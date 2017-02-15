@@ -10,7 +10,17 @@ function isAdminLoggedIn()
 
 function isLoggedin($con)
 {
-    return isset($_SESSION['username']);
+    if(!isset($_SESSION['username']))
+        return false;
+    $username=$_SESSION['username'];
+    $remTime = getRemTimeForUser($con, $username);
+    
+    if($remTime<=0) 
+        return false;
+
+    return !isUserBanned($con, $username);
+
+    
 }
 
 function dbConnect()
@@ -35,7 +45,8 @@ function setFirstStampForUser($con, $username){
     }
 
 }
-function getRemTimeForUser($con, $username)
+
+function getRemTimeForUser($con, $username) //in seconds
 {
     $currentTimestamp = strtotime(date('Y-m-d H:i:s'));
     $firststamp = null;
@@ -71,6 +82,20 @@ function getContestTimelimit($con)
     return $timelimit;
 }
 
+function isUserBanned($con, $username)
+{
+    $sql = "SELECT status from users WHERE username = '{$username}'";
+    $result = mysqli_query($con, $sql);
+    if (mysqli_num_rows($result) > 0) {
+        $row = mysqli_fetch_assoc($result);
+        $status = $row['status'];
+        if($status==0)
+            return true;
+        else
+            return false;
+    }
+}
+
 function isContestOnline($con)
 {
     $defaultOnlineStatus = 0;
@@ -98,6 +123,9 @@ function setContestOffline($con)
     $sql = "UPDATE settings SET value='0' WHERE param = 'isOnline'";
     mysqli_query($con, $sql);
 }
+
+
+//Utility methods below
 
 function unifyEOL($text) //unifies line endings so that it won't result in problems for different platforms
 {

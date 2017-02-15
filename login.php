@@ -1,12 +1,13 @@
 <?php
 require_once('includes/bootstrap.php');
+$con = dbConnect();
 
-if (isLoggedin()) {
+if (isLoggedin($con)) {
     header('Location:index.php');
     die();
 } else if (isset($_POST['username']) && isset($_POST['password'])) {
 
-    $con = dbConnect();
+   
     $username = mysqli_real_escape_string($con, trim($_POST['username']));
     $password = mysqli_real_escape_string($con, trim($_POST['password']));
 
@@ -28,10 +29,21 @@ if (isLoggedin()) {
         {
             $_SESSION['admin'] = true;
             header('Location:admin/index.php');
-        } else {
+        } else { //If normal user tried logging in
+            if(getRemTimeForUser($con, $username)<=0)
+            {
+                 header('location:login.php?error=timeout');  
+            }
+
+            if (isUserBanned($con, $username))
+            {
+                header('location:login.php?error=banned');  
+            }
+
             $_SESSION['username'] = $username;
             setFirstStampForUser($con, $username);
             header('Location:index.php?welcome=1');
+
         }
     } else //Login details did not match
     {
@@ -145,10 +157,14 @@ if (isLoggedin()) {
         <?php
         if (isset($_GET['error']) && $_GET['error'] == 'contestoff')
             echo 'Contest is offline. Try later!';
-        if (isset($_GET['error']) && $_GET['error'] == 'invalid')
-            echo 'Incorrect Credentials!';
+        else if (isset($_GET['error']) && $_GET['error'] == 'invalid')
+            echo 'Wrong Credentials';
         else if (isset($_GET['error']) && $_GET['error'] == 'unauthorized')
             echo 'Login First!';
+        else if (isset($_GET['error']) && $_GET['error'] == 'banned')
+            echo 'You have been banned';
+        else if (isset($_GET['error']) && $_GET['error'] == 'timeout')
+            echo 'Your Time Expired';
         else if (isset($_GET['error']) && $_GET['error'] == 'admin')
             echo 'Admin Se Mazak Nahi Bhai!';
         ?>
