@@ -3,10 +3,11 @@ require_once('../includes/bootstrap.php');
 $con = dbConnect();
 ?>
 <?php
+$con = dbConnect();
+
 if (!isAdminLoggedIn())
     header('Location:../login.php?error=admin');
 
-$con = dbConnect();
 include('header.php');
 ?>
 
@@ -17,8 +18,7 @@ include('header.php');
   <div class="card " style=" position:fixed; right:5px ;left:70%">
             <div class="card-content indigo lighten-5"><br>
                         <div class="card-title center">
-                                         ADD TEAM
-                                       </div><hr>
+                          ADD TEAM</div><hr>
                                        <div class="form-container row">
                                            <form method="post" action="teams.php">
                                                <div class="row">

@@ -4,7 +4,7 @@ $con = dbConnect();
 
 if(!isContestOnline($con))
     header('location:login.php?error=contestoff');
-else if(!isLoggedin())
+else if(!isLoggedin($con))
     header('location:login.php?error=unauthorized');
 
 

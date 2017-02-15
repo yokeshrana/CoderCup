@@ -7,7 +7,7 @@ require_once('includes/bootstrap.php');
 include('header.php');
 
 if (isset($_GET['success']))
-    echo("<div class=\"alert alert-success\">\nCongratulations! Your code has been submitted\n</div>");
+    echo("<div class=\"alert alert-success\" style=\"margin-right:100px\">\nCongratulations! Your code has been submitted\n</div>");
 ?>
 
 <div class="cards-container" style="margin-right:100px">
@@ -70,12 +70,9 @@ if (isset($_GET['success']))
     </ul>
 </div>
 <script type="text/javascript" src="js/timer.js">
-
 </script>
 <script type="text/javascript" >
-
-
-timelimit(Math.floor(<?php echo getRemTimeForUser($con, $_SESSION['username']); ?>/60));
+timelimit(<?php echo getRemTimeForUser($con, $_SESSION['username']); ?>);
 </script>
 
 <?php include('footer.php'); ?>
