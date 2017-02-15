@@ -70,12 +70,9 @@ if (isset($_GET['success']))
     </ul>
 </div>
 <script type="text/javascript" src="js/timer.js">
-
 </script>
 <script type="text/javascript" >
-
-
-timelimit(Math.floor(<?php echo getRemTimeForUser($con, $_SESSION['username']); ?>/60));
+timelimit(<?php echo getRemTimeForUser($con, $_SESSION['username']); ?>);
 </script>
 
 <?php include('footer.php'); ?>

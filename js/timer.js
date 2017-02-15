@@ -1,8 +1,8 @@
 var timeoutHandle;
 //DEFINING OF SESSION REMAINING !!!!
-function timelimit(minutes) {
-    var seconds = 60;
-    var mins = minutes;
+function timelimit(time) {
+    var seconds = time%60;
+    var mins = Math.floor(time/60);
     function update() {
         var counter = document.getElementById("timer_text");
         var current_minutes = mins-1
