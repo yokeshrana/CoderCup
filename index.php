@@ -7,7 +7,7 @@ require_once('includes/bootstrap.php');
 include('header.php');
 
 if (isset($_GET['success']))
-    echo("<div class=\"alert alert-success\">\nCongratulations! Your code has been submitted\n</div>");
+    echo("<div class=\"alert alert-success\" style=\"margin-right:100px\">\nCongratulations! Your code has been submitted\n</div>");
 ?>
 
 <div class="cards-container" style="margin-right:100px">

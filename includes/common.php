@@ -8,9 +8,9 @@ function isAdminLoggedIn()
     return isset($_SESSION['admin']) && $_SESSION['admin']==true;
 }
 
-function isLoggedin()
+function isLoggedin($con)
 {
-    return isset($_SESSION['username']) ;
+    return isset($_SESSION['username']);
 }
 
 function dbConnect()
