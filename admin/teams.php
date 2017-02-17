@@ -16,7 +16,7 @@ include('header.php');
 
 <div >
   <div class="card " style=" position:fixed; right:5px ;left:70%">
-            <div class="card-content indigo lighten-5"><br>
+            <div class="card-content indigo lighten-5">
                         <div class="card-title center">
                           ADD TEAM</div><hr>
                                        <div class="form-container row">
@@ -54,7 +54,10 @@ include('header.php');
                                                                    <input name="user3" type="text" placeholder="Team Member 1"  ;>
 
                                                                </div>
-                                               </div>
+                                                           </div>
+
+                                                   </div>
+
                                                <!-- <div class="row">
                                                    <div class="left-input-detail col s4 center">TEAM EMAIL ID</div>
                                                    <div class="col s8">
@@ -100,7 +103,21 @@ include('header.php');
                                                         }
                                                    ?>
                                                    <!-- endhere -->
-                                               <button class="btn right green darken-4 white-text" style="margin-right:140" name="form-submit" type="submit">ADD</button>
+                                                   <form class="form-inline well" >
+                                                   <div class="form-group">
+                                                   <button class="btn right green darken-4 white-text" style="margin-right:140" name="form-submit" type="submit">ADD </button>
+                                                   </div>
+                                                   <div class="form-group">
+                                                     <select class="browser-default" style="width:55px;" name="language">
+                                                         <option  value="c">C</option>
+                                                         <option value="cpp">C++</option>
+                                                         <option  value="java">Java</option>
+                                                         <option  value="python">Python </option>
+
+                                                     </select>
+                                                   </select>
+                                                   </div>
+                                                   </form>
                                                     <br><br>
                                                  <?php
                                          if ( isset( $_POST['form-submit'] ) ) {
@@ -109,8 +126,9 @@ include('header.php');
                                           $user1 = $_POST['user1'];
                                           $user2= $_POST['user2'];
                                           $user3= $_POST['user3'];
-                                           $sql = "INSERT INTO users ". "(username,password,name1,name2,name3)". "VALUES('$username','$password'
-                                           ,'$user1','$user2','$user3')";
+                                          $lang=$_POST['language'];
+                                           $sql = "INSERT INTO users ". "(username,password,name1,name2,name3,language)". "VALUES('$username','$password'
+                                           ,'$user1','$user2','$user3','$language')";
                                            $doquery= mysqli_query($con, $sql);
 
                                            if($doquery)
@@ -166,7 +184,7 @@ include('header.php');
 
 <form class="" action="teams.php" method="post">
     <input type="hidden" name="username" value="<?php echo $row["username"] ?>" >
-  <input type="text" name="newpassword" value="Change Password">
+  <input type="text" name="newpassword" placeholder="Change Password">
   <button class="btn-sm  green darken-4 white-text"  name="changepass-submit" type="submit" class="btn btn-primary" >GO</button>
 </form>
 

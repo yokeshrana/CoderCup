@@ -75,20 +75,22 @@ $con = dbConnect();
                 </div>
                 <div class="input-field col s6">
 
-                <?php 
+                <?php
                         $query="Select language from users where username='".$_SESSION['username']."'";
-                         $result=mysqli_query(con,query);
-                     
+                         $result=mysqli_query($con,$query);
+                         $row=mysqli_fetch_assoc($result);
+                         $lang=$row['language'];
+
                  ?>
 
 
                     <b>Language</b>
                     <select class="browser-default" name="language">
-                        <option  value="c">C Language</option>
-                        <option value="cpp">C++ Language</option>
-                        <option value="java">Java LAngugage</option>
-                        <option value="python">Python Langauge</option>
-                       
+                        <option <?php if($lang==1)echo" selected='selected' " ;?> value="c">C</option>
+                        <option <?php if($lang==2)echo" selected='selected' " ;?>value="cpp">C++</option>
+                        <option <?php if($lang==3)echo" selected='selected' " ;?>value="java">Java </option>
+                        <option <?php if($lang==4)echo" selected='selected' " ;?>value="python">Python</option>
+
                     </select>
 
                 </div>
