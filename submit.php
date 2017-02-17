@@ -9,7 +9,7 @@ include('header.php');
 
 
 if (isset($_GET['TleError'])) {
-    echo("<div class=\"alert alert-warning\">\nTime limit exceeded!\n</div>");
+    echo("<div class=\"alert alert-warning\">\nTime limit exceeded!! Optimize Ur Code!!\n</div>");
 }
 if (isset($_GET['CompilationError'])) {
     echo("<div class=\"alert alert-error\">\n<strong>Compilation Errors:</strong>
@@ -19,7 +19,7 @@ if (isset($_GET['CompilationError'])) {
     echo("<div class=\"alert alert-error\">\nWrong Answer!\n</div>");
 
 } else if (isset($_GET['ServerError'])) {
-    echo("<div class=\"alert alert-error\">\nFailed to reach compiler socket!\n</div>");
+    echo("<div class=\"alert alert-error\">\nFailed to reach compiler socket Contact Administrator!\n</div>");
 
 }
 
@@ -74,12 +74,21 @@ $con = dbConnect();
 
                 </div>
                 <div class="input-field col s6">
+
+                <?php 
+                        $query="Select language from users where username='".$_SESSION['username']."'";
+                         $result=mysqli_query(con,query);
+                     
+                 ?>
+
+
                     <b>Language</b>
                     <select class="browser-default" name="language">
-                        <option value="c">C Language</option>
-                        <option value="cpp">C++</option>
-                        <option value="java">Java</option>
-                        <option value="python">Python</option>
+                        <option  value="c">C Language</option>
+                        <option value="cpp">C++ Language</option>
+                        <option value="java">Java LAngugage</option>
+                        <option value="python">Python Langauge</option>
+                       
                     </select>
 
                 </div>

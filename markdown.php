@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 #
 # Markdown  -  A text-to-HTML conversion tool for web writers
 #
@@ -1729,4 +1729,4 @@ negligence or otherwise) arising in any way out of the use of this
 software, even if advised of the possibility of such damage.
 
 */
-?>
+?> -->

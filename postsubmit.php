@@ -42,7 +42,7 @@ if(is_numeric($_POST['id'])) {
 
         if($socket) {
 
-            fwrite($socket, $_POST['username']."\n");//adding username functionality 
+            fwrite($socket, $_SESSION['username']."\n");//adding username functionality 
             fwrite($socket, $_POST['filename']."\n"); //Writing to the compiler socket the name of source file
             $query = "SELECT time, input, output FROM problems WHERE id='".$_POST['id']."'";
             $result = mysqli_query($con, $query);

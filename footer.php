@@ -16,7 +16,7 @@
             background-color: #2c2c2c;
 			text-align:center;
          " >
-		 Shashank Singh&nbsp  &  &nbsp&nbsp  Yokesh Rana 
+		  Yokesh Rana &nbsp&nbsp&nbsp&nbsp   &copy  &nbsp&nbsp&nbsp  Shashank Singh  
 		 
 		</div> 
 </body>
