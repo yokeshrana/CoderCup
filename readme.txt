@@ -1,6 +1,11 @@
-Ban functionality remaining and change password remaining
-Codes in SQL
+#A college level code judging platform build on top of php html ,,,,
 
-	in table  : submissions
-		status : 	1 : Attempted
-					2 : Solved
+# Contained the Compiler Server in Java ........
+
+
+
+<pre>
+# # #         #            #     #         #
+#    #       #  #          # #   #       #   #
+# # #      #  #  #        #   # #      # # #  #
+#     #   #       #       #     #     #        #       </pre>
