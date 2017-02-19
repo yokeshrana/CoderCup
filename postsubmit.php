@@ -66,7 +66,7 @@ if(is_numeric($_POST['id'])) {
             } else if($status == 1) {
                 //Some true output received from the server
 
-                if(trim($contents) == trim(unifyEOL($fields['output']))) {
+                if(trim($contents) == trim(unifyEOL($fields['output']))) {//done to ensure that the field matches with output
                     // the expected output matched with the actual output
                     $query = "UPDATE submissions SET statusCode=2 WHERE (username='".$_SESSION['username']."' AND problem_id='".$_POST['id']."')";
                     mysqli_query($con, $query);
