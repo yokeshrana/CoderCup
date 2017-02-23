@@ -1,4 +1,0 @@
-1.c: In function ‘main’:
-1.c:6:1: error: expected ‘;’ before ‘return’
- return 0;
- ^
