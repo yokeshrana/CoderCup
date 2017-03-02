@@ -7,7 +7,7 @@ if (isLoggedin($con)) {
     die();
 } else if (isset($_POST['username']) && isset($_POST['password'])) {
 
-   
+
     $username = mysqli_real_escape_string($con, trim($_POST['username']));
     $password = mysqli_real_escape_string($con, trim($_POST['password']));
 
@@ -32,13 +32,13 @@ if (isLoggedin($con)) {
         } else { //If normal user tried logging in
             if(getRemTimeForUser($con, $username)<=0)
             {
-                 header('location:login.php?error=timeout');  
+                 header('location:login.php?error=timeout');
 
             }
 
             else if (isUserBanned($con, $username))
             {
-                header('location:login.php?error=banned');  
+                header('location:login.php?error=banned');
             }
 
             else
@@ -156,7 +156,7 @@ if (isLoggedin($con)) {
 <div class="heading-container">
   <h5 align="center" style="color:white;font-family: mono, sans-serif">&lt/CoderCup&gt Login</h5>
 
-  
+
 </div>
 <div class="main-container">
     <div class="alert-warn">
@@ -196,7 +196,8 @@ if (isLoggedin($con)) {
         </form>
     </div>
 </div>
-<div class="footer">Shashank Singh&nbsp  &  &nbsp&nbsp  Yokesh Rana </div>
+<div class="footer"> <span class="left">&nbsp&nbsp&nbsp&nbsp&nbsp##  Shashank Singh  ##</span><marquee width="600" behavior="alternate">####  --  FOR ANY QUERY CONTACT THE NO 7017126821  --   #### </marquee></span> <span class="right"> ## Yokesh Rana  ## &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp </span>
+</div>
 </body>
 
 </html>
