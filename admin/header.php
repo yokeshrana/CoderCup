@@ -14,8 +14,8 @@ $con = dbConnect();
     <style>
         body{
             background: #abbaab; /* fallback for old browsers */
-            background: -webkit-linear-gradient(to left, #abbaab, #ffffff); /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to left, #abbaab, #ffffff); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            background: -webkit-linear-gradient(to left, #180000 , #080000 ); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to left, #180000 , #080000 ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         }
         .main-container{
             margin:0 200px;

@@ -16,7 +16,7 @@
             background-color: #2c2c2c;
 			text-align:center;
          " >
-         <span class="left">&nbsp&nbsp&nbsp&nbsp&nbsp##  Shashank Singh  ##</span><marquee SCROLLDELAY="500" width="600" behavior="alternate">####  OKK WINNER IS 1604310004 agrima singh #### </marquee></span> <span class="right"> ## Yokesh Rana  ## &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp </span>
+         <span class="left">&nbsp&nbsp&nbsp&nbsp&nbsp##  Yokesh Rana  ##</span><!-- <marquee SCROLLDELAY="500" width="600" behavior="alternate">####  OKK WINNER IS 1604310004 agrima singh #### </marquee> --></span> <span class="right"> ## Shashank Singh  ## &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp </span>
 
 
 		</div>

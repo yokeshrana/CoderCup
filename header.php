@@ -72,6 +72,7 @@ else if(!isLoggedin($con))
 </head>
 
 <body>
+
 <div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper blue-grey darken-3">

@@ -109,10 +109,10 @@ include('header.php');
                                                    </div>
                                                    <div class="form-group">
                                                      <select class="browser-default" style="width:55px;" name="language">
-                                                         <option  value="c">C</option>
-                                                         <option value="cpp">C++</option>
-                                                         <option  value="java">Java</option>
-                                                         <option  value="python">Python </option>
+                                                         <option  value="1">C</option>
+                                                         <option value="2">C++</option>
+                                                         <option  value="3">Java</option>
+                                                         <option  value="4">Python </option>
 
                                                      </select>
                                                    </select>
@@ -126,7 +126,7 @@ include('header.php');
                                           $user1 = $_POST['user1'];
                                           $user2= $_POST['user2'];
                                           $user3= $_POST['user3'];
-                                          $lang=$_POST['language'];
+                                          $language=$_POST['language'];
                                            $sql = "INSERT INTO users ". "(username,password,name1,name2,name3,language)". "VALUES('$username','$password'
                                            ,'$user1','$user2','$user3','$language')";
                                            $doquery= mysqli_query($con, $sql);

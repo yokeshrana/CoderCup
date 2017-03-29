@@ -4,10 +4,15 @@ function timelimit(time) {
 
     if(time<=0)
     {
-        alert('Your time is out!');
+        alert('Time Up');
         self.location = "logout.php";
     }
 
+ if(time>10 && time <=11)
+    {
+        alert('time is going to expire in minute ');
+        
+    }
 
     var seconds = time%60;
     var mins = Math.floor(time/60);

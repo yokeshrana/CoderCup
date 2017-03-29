@@ -1,63 +1,63 @@
 <?php
+require_once('../includes/bootstrap.php');
+$con = dbConnect();
+?>
+<?php
+$con = dbConnect();
 
-require_once "../includes/bootstrap.php";
-include "header.php";
-
-if(isset($_POST['formSubmit']))
-{
-    if(isset($_POST['id']) && is_numeric($_POST['id'])) //modification case
-    {
-
-    }
-
-}
-
+if (!isAdminLoggedIn())
+    header('Location:../login.php?error=admin');
+include('header.php');
 echo '<div class="main-container">';
 ?>
 
-<div class="card">
-    <div class="card-content indigo lighten-5">
-        <div class="card-title">Problems</div>
-        <hr>
 
-        <div class="problem-container">
-            <div class="card add-new-prob-container">
-                <div class="card-content">
-                    <div style="font-size:17px"><u>Add new problem</u></div>
-                    <div class="form-container row">
-                        <form method="post" action="problems.php">
-                            <input type="hidden" name="formSubmit">
-                            <?php
-                                if(isset($_GET['modifyId']) && is_numeric($_GET['modifyId']))
-                                {
-                                    echo "<input type=\"hidden\" name=\"id\" value=\"{$_GET['modifyId']}\">";
-                                }
-                            ?>
-                            <div class="row">
-                                <div class="left-input-detail col s3 center">Problem Title</div>
-                                <div class="col s8">
-                                    <input name="title" type="text" placeholder="Title" required
-                                           value="<?php echo "" ?>" ;>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="left-input-detail col s3 center">Problem Description<br>with sample I/O
-                                </div>
-                                <div class="col s8">
-                                    <div class="">
-                                        <textarea name="text" style="height: 300px; padding: 8px;" class="browser-default" rows="10" required></textarea>
-                                    </div>
-                                </div>
-                            </div>
+<?php 
+if(isset($_POST['preview-problem']))
+    {$_SESSION['title']=$_POST['title'];
+  
+    $_SESSION['justshowtext']=$_POST['text'];
+  echo '<script>window.open("problempreview.php")</script>';  }
+
+ ?>
 
 
-                            <button class="btn-small right teal darken-4 white-text" type="submit">Add</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+<?php 
+if(isset($_POST['add-problem']))
+   {$title=$_POST['title'];
+   $text=$_POST['text'];
+    $input=$_POST['input'];
+   $output=$_POST['output'];
+
+   $query="INSERT INTO problems ". "(title,text,input,output)". "VALUES('$title','$text'
+                                           ,'$input','$output')";
+
+   $res=mysqli_query($con,$query);
+   if($res)
+    echo '<script>alert("Success");</script>';
+}
+
+ ?>
+
+    <div class="card">
+        <div class="card-content indigo lighten-5">
+            
+            <hr>
+<div style="text-align:center"><h4 ><u> ADD PROBLEM </u></h1></div>
+<form method="post">
+<b> ENTER TITLE :: </b><input type="text" name="title" width="200px" >
+<b> ENTER PROBLEM IN HTML FORMAT :: </b><textarea style="height:300px; border: 2px solid blue-black" name="text"  ></textarea> 
+<div style="display: inline-block;"><b> ENTER INPUT TEST CASE :: </b><textarea style="border: 2px solid blue-black " name="input"  ></textarea>  </div>
+
+<div style="display: inline-block;"><b> ENTER OUTPUT TEST CASE :: </b><textarea style="border: 2px solid blue-black "" name="output"  ></textarea>  </div>
+<button  name="add-problem " style="display: inline-block;" class="btn " type=submit> ADD PROBLEM </button>
+<button  class=" btn right" name="preview-problem" style="display: inline-block;" type=submit> PREVIEW PROBLEM</button>
+</form>
+
+
+
+
+
 
 <?php include "footer.php"; ?>

@@ -74,5 +74,6 @@ if (isset($_GET['success']))
 <script type="text/javascript" >
 timelimit(<?php echo getRemTimeForUser($con, $_SESSION['username']); ?>);
 </script>
+<<<<<<< HEAD
 
 <?php include('footer.php'); ?>
